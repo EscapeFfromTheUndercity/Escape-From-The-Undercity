@@ -57,6 +57,31 @@
       width: 100%;
       margin-bottom: 20px;
     }
+      .neon-text {
+      font-size: 3em;
+      color: yellow;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+      .subscribe {
+      display: inline-block;
+      padding: 10px;
+      border: 3px solid yellow;
+      animation: blink 1s infinite;
+    }
+
+    .subscribe iframe {
+      width: 400px;
+      height: 160px;
+    }
+
+    .subscribe-gap {
+      height: 80px;
+    }
 
     .neon-text {
       font-size: 3em;
@@ -109,8 +134,9 @@
 
   <div class="content" id="home">
     <div class="subscribe">
-      <iframe src="https://peterlally.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+      <iframe src="https://peterlally.substack.com/embed" frameborder="0" scrolling="no"></iframe>
     </div>
+    <div class="subscribe-gap"></div>
     <img src="3.png" alt="Panel 3" class="comic-panel">
     <img src="5.png" alt="Panel 5" class="comic-panel">
     <img src="6.png" alt="Panel 6" class="comic-panel">
