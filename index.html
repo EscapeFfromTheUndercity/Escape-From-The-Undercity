@@ -59,13 +59,31 @@
     }
   </style>
   <script>
-    window.onload = () => {
-      const hash = window.location.hash || "#home";
-      document.querySelectorAll(".content").forEach(el => el.classList.remove("active"));
-      const section = document.querySelector(hash);
-      if (section) section.classList.add("active");
-    };
-  </script>
+  function showSectionFromHash() {
+    const hash = window.location.hash || "#home";
+    document.querySelectorAll(".content").forEach(el => el.classList.remove("active"));
+    const section = document.querySelector(hash);
+    if (section) section.classList.add("active");
+  }
+
+  window.onload = showSectionFromHash;
+  window.onhashchange = showSectionFromHash;
+
+  // Make nav clicks trigger showSectionFromHash even if hash doesn’t change
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.getAttribute('href');
+        if (window.location.hash === target) {
+          showSectionFromHash();
+        } else {
+          window.location.hash = target;
+        }
+      });
+    });
+  });
+</script>
 </head>
 <body>
   <header>
