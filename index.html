@@ -57,6 +57,17 @@
       width: 100%;
       margin-bottom: 20px;
     }
+
+    .neon-text {
+      font-size: 3em;
+      color: yellow;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
   </style>
   <script>
   function showSectionFromHash() {
@@ -116,7 +127,7 @@
   </div>
 
   <div class="content" id="shop">
-    <p style="font-size: 3em; color: yellow;">Closed</p>
+    <p class="neon-text">Closed</p>
   </div>
 </body>
 </html>
