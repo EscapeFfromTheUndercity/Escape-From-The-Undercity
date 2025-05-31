@@ -8,16 +8,17 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: #f9f9f9;
+      background: url('Ep1-FullPage1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
     header {
-      background-color: #111;
-      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 1em;
       text-align: center;
     }
     nav {
-      background: #222;
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       padding: 0.5em 0;
@@ -35,11 +36,13 @@
       padding: 20px;
       max-width: 800px;
       margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
     }
     .comic-panel, .comic-fullpage {
       width: 100%;
       margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
     .subscribe {
       margin-top: 40px;
@@ -62,19 +65,21 @@
   </nav>
 
   <div class="content" id="home">
-    <h2>Welcome</h2>
-    <p>Welcome to <strong>Escape from the Undercity</strong> — a sci-fi comic adventure delivered in vertical scroll. New comic posted regularly. Subscribe below to get updates!</p>
-    <img src="Ep1-FullPage1.png" alt="Preview Panel 1" class="comic-panel">
-    <img src="Ep1-FullPage2.png" alt="Preview Panel 2" class="comic-panel">
-    <div class="subscribe">
-      <iframe src="https://peterlally.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-    </div>
+  <div class="subscribe">
+    <iframe src="https://peterlally.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <img src="3.png" alt="Panel 3" class="comic-panel">
+  <img src="5.png" alt="Panel 5" class="comic-panel">
+  <img src="6.png" alt="Panel 6" class="comic-panel">
+</div>
+</div>
+</div>
   </div>
 
   <div class="content" id="about">
-    <h2>About</h2>
-    <p>This comic is created by Peter Lally, exploring dystopian themes with striking visuals and narrative depth. Dive into a gritty underground world full of mystery, resistance, and survival.</p>
-  </div>
+  <h2>About</h2>
+  <p>A comic by Richard Cowdry and Peter Lally. Richard is an award winning cartoonist and illustrator, published by Avant Verlag. He formerly wore the hat of Editor of 'The Comix Reader'.</p>
+</div>
 
   <div class="content" id="comic">
     <h2>Comic</h2>
@@ -90,8 +95,7 @@
   </div>
 
   <div class="content" id="shop">
-    <h2>Shop</h2>
-    <p>Coming soon: buy prints, merch, and exclusive content. Stay tuned!</p>
-  </div>
+  <h2>Shop</h2>
+</div>
 </body>
 </html>
