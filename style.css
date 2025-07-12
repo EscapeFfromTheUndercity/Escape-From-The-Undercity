@@ -1,50 +1,30 @@
+
 body {
-    margin: 0;
-    background-color: #000;
-    color: white;
-    font-family: monospace;
-    text-align: center;
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: monospace;
+  text-align: center;
 }
-
 header {
-    padding: 1em;
+  padding: 1em;
 }
-
 nav a {
-    margin: 0 1em;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-main {
-    background-color: #c4b293;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .pipes {
-    display: flex;
-    gap: 20px;
-    animation: rise 3s ease-in-out forwards;
+  background: #c3af8f;
+  padding: 40px 0;
 }
-
-.pipe {
-    width: 40px;
-    height: 150px;
-    background-color: pink;
-    border-top: 3px dashed #444;
+.pipes img {
+  height: 200px;
+  margin: 0 10px;
+  animation: swing 2s infinite ease-in-out;
 }
-
-@keyframes rise {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@keyframes swing {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
 }
