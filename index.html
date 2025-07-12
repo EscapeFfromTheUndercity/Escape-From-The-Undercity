@@ -1,141 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Escape from the Undercity</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
     body {
-      background-color: black;
       margin: 0;
+      font-family: monospace;
+      background-color: #000;
       color: white;
-      font-family: 'Share Tech Mono', monospace;
-    }
-    header {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 1em;
       text-align: center;
-      font-size: 2em;
     }
-    nav {
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      padding: 0.5em 0;
+
+    header {
+      padding: 2rem 1rem 1rem;
     }
+
     nav a {
       color: white;
+      margin: 0 1rem;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
-      font-size: 1.75em;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .subscribe-box {
+      margin: 4rem auto;
+      max-width: 400px;
+      padding: 1rem;
+      border: 2px solid #4caf50;
+      border-radius: 6px;
+      background-color: white;
+      color: black;
     }
-    .content {
-      display: none;
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: transparent;
-      text-align: center;
+
+    .smokestack-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background: black;
     }
-    .active {
-      display: block;
+
+    .smokestack-container img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
     }
-    .subscribe {
-      display: inline-block;
-      padding: 10px;
-      box-shadow: 0 0 20px 3px #50fa7b;
-      border: 3px solid #50fa7b;
-      animation: emeraldBlink 5s infinite;
-      background: rgba(0, 0, 0, 0.6);
+
+    .smoke {
+      position: absolute;
+      bottom: 100px;
+      width: 20px;
+      height: 20px;
+      background: rgba(200, 200, 200, 0.5);
+      border-radius: 50%;
+      animation: smokeUp 4s ease-in-out infinite;
     }
-    .subscribe iframe {
-      width: 400px;
-      height: 160px;
-      animation: none;
+
+    .smoke:nth-child(1) {
+      left: 20%;
+      animation-delay: 0s;
     }
-    .subscribe-gap {
-      height: 80px;
+
+    .smoke:nth-child(2) {
+      left: 50%;
+      animation-delay: 1s;
     }
-    .neon-text {
-      font-size: 3em;
-      color: yellow;
-      animation: blink 1s infinite;
+
+    .smoke:nth-child(3) {
+      left: 70%;
+      animation-delay: 2s;
     }
-    #home {
-      background: url('pipes-placeholder.png') repeat-x bottom;
-      background-size: cover;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
-    }
-    @keyframes emeraldBlink {
-      0%, 100% { box-shadow: 0 0 20px 3px #50fa7b; }
-      50% { box-shadow: none; }
+
+    @keyframes smokeUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
-  <script>
-    function showSectionFromHash() {
-      const hash = window.location.hash || "#home";
-      document.querySelectorAll(".content").forEach(el => el.classList.remove("active"));
-      const section = document.querySelector(hash);
-      if (section) section.classList.add("active");
-    }
-
-    window.onload = showSectionFromHash;
-    window.onhashchange = showSectionFromHash;
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          const target = link.getAttribute('href');
-          if (window.location.hash === target) {
-            showSectionFromHash();
-          } else {
-            window.location.hash = target;
-          }
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <header>
     <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Comic</a>
+      <a href="#">Shop</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#comic">Comic</a>
-    <a href="#shop">Shop</a>
-  </nav>
 
-  <div class="content" id="home">
-    <div class="subscribe">
-      <iframe src="https://peterlally.substack.com/embed" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <div class="subscribe-gap"></div>
+  <div class="subscribe-box">
+    <iframe src="https://escapeundercity.substack.com/embed" width="100%" height="100" frameborder="0" scrolling="no"></iframe>
   </div>
 
-  <div class="content" id="about">
-    <p style="font-size: 2em;">A comic by Richard Cowdry and Peter Lally. Richard is an award winning cartoonist and illustrator, published by Avant Verlag. He formerly wore the hat of Editor of 'The Comix Reader'.</p>
-  </div>
-
-  <div class="content" id="comic">
-    <img src="Ep1-FullPage1.png" alt="Episode 1 Page 1" class="comic-panel">
-    <img src="Ep1-FullPage2.png" alt="Episode 1 Page 2" class="comic-panel">
-    <img src="Ep2-FullPage1.png" alt="Episode 2 Page 1" class="comic-panel">
-  </div>
-
-  <div class="content" id="shop">
-    <p class="neon-text">Closed</p>
+  <div class="smokestack-container">
+    <img src="pipes-placeholder.png" alt="Pipes at bottom"/>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
   </div>
 </body>
 </html>
