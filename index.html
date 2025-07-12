@@ -8,79 +8,80 @@
     <style>
         body {
             margin: 0;
-            background-color: black;
             font-family: monospace;
+            background-color: black;
             color: white;
+            overflow-x: hidden;
+        }
+
+        header {
             text-align: center;
+            padding: 2rem 1rem 1rem;
+            font-size: 1.5rem;
         }
+
         nav {
-            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 2rem;
         }
+
         nav a {
-            margin: 0 15px;
-            color: white;
+            margin: 0 1rem;
             text-decoration: none;
+            color: white;
             font-weight: bold;
         }
-        h1 {
-            font-size: 2rem;
-            margin-top: 20px;
-        }
-        .subscribe-container {
-            margin: 30px auto;
-            width: 300px;
-            height: 80px;
-            background-color: #fff;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .pipe-section {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-        .pipes-image {
-            display: block;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .smoke {
-            position: absolute;
-            width: 20px;
-            height: 100px;
-            background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0) 80%);
-            animation: smoke 4s linear infinite;
-        }
-        .smoke1 { left: 25%; animation-delay: 0s; }
-        .smoke2 { left: 50%; animation-delay: 1s; }
-        .smoke3 { left: 75%; animation-delay: 2s; }
 
-        @keyframes smoke {
-            0% { bottom: 0; opacity: 0.3; transform: scaleX(1) scaleY(1); }
-            50% { opacity: 0.1; }
-            100% { bottom: 300px; opacity: 0; transform: scaleX(1.2) scaleY(1.5); }
+        .substack-form {
+            text-align: center;
+            margin: 2rem auto 1rem;
+            max-width: 400px;
+        }
+
+        .pipes-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -2;
+        }
+
+        .pipes-img {
+            width: 100%;
+            display: block;
+        }
+
+        .smoke {
+            position: fixed;
+            bottom: 120px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: repeating-linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.03) 20px);
+            animation: rise 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rise {
+            from { transform: translateY(100%); }
+            to { transform: translateY(-100%); }
         }
     </style>
 </head>
 <body>
-    <h1>Escape from the Undercity</h1>
+    <header>Escape from the Undercity</header>
     <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Comic</a>
         <a href="#">Shop</a>
     </nav>
-    <div class="subscribe-container">
-        <iframe src="https://escapeundercity.substack.com/embed" width="280" height="80" style="border:none; background:white;" frameborder="0" scrolling="no"></iframe>
+    <div class="substack-form">
+        <iframe src="https://escapeundercity.substack.com/embed" width="100%" height="120" style="border:1px solid #ddd;background:white;" frameborder="0" scrolling="no"></iframe>
     </div>
-    <div class="pipe-section">
-        <img src="pipes-placeholder.png" alt="Pipes" class="pipes-image">
-        <div class="smoke smoke1"></div>
-        <div class="smoke smoke2"></div>
-        <div class="smoke smoke3"></div>
+    <div class="pipes-container">
+        <img src="pipes-placeholder.png" alt="Pipes" class="pipes-img">
     </div>
+    <div class="smoke"></div>
 </body>
 </html>
