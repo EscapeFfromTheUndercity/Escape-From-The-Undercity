@@ -2,86 +2,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape from the Undercity</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: monospace;
-            background-color: black;
-            color: white;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape from the Undercity</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .subscribe-box {
+      margin: 20px auto;
+      width: 300px;
+      height: 90px;
+    }
+    .background {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .smoke-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .smoke {
+      position: absolute;
+      width: 20px;
+      height: 200px;
+      background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0));
+      animation: rise 8s linear infinite;
+      opacity: 0.3;
+    }
+    .smoke:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .smoke:nth-child(2) { left: 40%; animation-delay: 2s; }
+    .smoke:nth-child(3) { left: 60%; animation-delay: 4s; }
+    .smoke:nth-child(4) { left: 80%; animation-delay: 6s; }
 
-        header {
-            text-align: center;
-            padding: 2rem 1rem 1rem;
-            font-size: 1.5rem;
-        }
-
-        nav {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        .substack-form {
-            text-align: center;
-            margin: 2rem auto 1rem;
-            max-width: 400px;
-        }
-
-        .pipes-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: -2;
-        }
-
-        .pipes-img {
-            width: 100%;
-            display: block;
-        }
-
-        .smoke {
-            position: fixed;
-            bottom: 120px;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: repeating-linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.03) 20px);
-            animation: rise 10s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rise {
-            from { transform: translateY(100%); }
-            to { transform: translateY(-100%); }
-        }
-    </style>
+    @keyframes rise {
+      0% { bottom: 0; opacity: 0.2; transform: translateY(0) scaleX(1); }
+      100% { bottom: 100%; opacity: 0; transform: translateY(-100%) scaleX(1.5); }
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <header>Escape from the Undercity</header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Comic</a>
-        <a href="#">Shop</a>
-    </nav>
-    <div class="substack-form">
-        <iframe src="https://escapeundercity.substack.com/embed" width="100%" height="120" style="border:1px solid #ddd;background:white;" frameborder="0" scrolling="no"></iframe>
+  <h1>Escape from the Undercity</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Comic</a>
+    <a href="#">Shop</a>
+  </nav>
+
+  <div class="subscribe-box">
+    <iframe src="https://escape.substack.com/embed" width="100%" height="90" style="border:1px solid #ccc;background:#fff;" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <div class="background">
+    <img src="pipes-placeholder.png" alt="Pipes background" />
+    <div class="smoke-container">
+      <div class="smoke"></div>
+      <div class="smoke"></div>
+      <div class="smoke"></div>
+      <div class="smoke"></div>
     </div>
-    <div class="pipes-container">
-        <img src="pipes-placeholder.png" alt="Pipes" class="pipes-img">
-    </div>
-    <div class="smoke"></div>
+  </div>
 </body>
 </html>
