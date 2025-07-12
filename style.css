@@ -1,47 +1,46 @@
 body {
-  margin: 0;
-  font-family: monospace;
-  background: black;
-  color: white;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    text-align: center;
 }
-
 header {
-  text-align: center;
-  padding: 20px;
+    padding: 20px 0;
 }
-
 nav a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
-
-.subscribe-box {
-  background: #222;
-  display: inline-block;
-  padding: 10px;
-  margin-top: 10px;
+main {
+    background-color: #c2b194;
+    padding: 100px 0;
 }
-
-.subscribe-box input {
-  padding: 5px;
-  margin-right: 5px;
+.pipes-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
-
-.subscribe-box button {
-  padding: 5px 10px;
+.pipe {
+    width: 40px;
+    height: 150px;
+    background-color: pink;
+    position: relative;
 }
-
-.subscribe-box small {
-  display: block;
-  margin-top: 5px;
-  font-size: 10px;
-  color: #ccc;
+.smoke {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: repeating-linear-gradient(180deg, gray, gray 2px, transparent 2px, transparent 4px);
+    transform: translateX(-50%);
+    animation: rise 2s linear infinite;
+    opacity: 0.6;
 }
-
-.main-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+@keyframes rise {
+    0% { transform: translate(-50%, 0); opacity: 0.6; }
+    100% { transform: translate(-50%, -20px); opacity: 0; }
 }
