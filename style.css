@@ -1,58 +1,70 @@
 
 body {
-    margin: 0;
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    text-align: center;
+  margin: 0;
+  font-family: monospace;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 
 header {
-    padding: 20px 0 10px 0;
+  padding: 20px;
 }
 
 nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-.substack-form {
-    margin-top: 10px;
-    z-index: 10;
-    position: relative;
+.substack-container {
+  margin: 20px auto;
 }
 
-.smoke-container {
-    position: relative;
-    margin: 0 auto;
-    max-width: 100%;
-    overflow: hidden;
+.background {
+  position: relative;
+  display: inline-block;
 }
 
-.pipes-bg {
-    width: 100%;
-    max-width: 900px;
-    display: block;
-    margin: 0 auto;
+.pipes-img {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
 }
 
 .smoke {
-    position: absolute;
-    width: 40px;
-    height: 200px;
-    background: rgba(255,255,255,0.1);
-    top: 60%;
-    border-radius: 50% 50% 0 0;
-    animation: smoke-rise 5s linear infinite;
-    z-index: 2;
+  position: absolute;
+  width: 30px;
+  height: 100px;
+  background: radial-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0));
+  animation: rise 4s infinite ease-in-out;
+  opacity: 0.6;
 }
 
-.smoke1 { left: 45%; animation-delay: 0s; }
-.smoke2 { left: 50%; animation-delay: 1s; }
-.smoke3 { left: 55%; animation-delay: 2s; }
+.smoke1 {
+  left: 30%;
+  animation-delay: 0s;
+}
+.smoke2 {
+  left: 45%;
+  animation-delay: 1s;
+}
+.smoke3 {
+  left: 60%;
+  animation-delay: 2s;
+}
 
-@keyframes smoke-rise {
-    0% { transform: translateY(0) scaleX(1); opacity: 0.3; }
-    100% { transform: translateY(-300px) scaleX(1.5); opacity: 0; }
+@keyframes rise {
+  0% {
+    bottom: 0;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    bottom: 200px;
+    opacity: 0;
+  }
 }
