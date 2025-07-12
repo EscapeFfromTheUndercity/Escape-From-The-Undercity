@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Escape from the Undercity</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
@@ -12,6 +12,9 @@
       margin: 0;
       color: white;
       font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -42,7 +45,7 @@
 
     .content {
       display: none;
-      padding: 100px 20px;
+      padding: 100px 20px 150px 20px;
       max-width: 1000px;
       margin: 0 auto;
       background-color: transparent;
@@ -80,6 +83,13 @@
       font-size: 3em;
       color: yellow;
       animation: blink 1s infinite;
+    }
+
+    .pipes-background {
+      background: url('pipes-placeholder.png') no-repeat center bottom;
+      background-size: cover;
+      height: 200px;
+      width: 100%;
     }
 
     @keyframes blink {
@@ -152,5 +162,7 @@
   <div class="content" id="shop">
     <p class="neon-text">Closed</p>
   </div>
+
+  <div class="pipes-background"></div>
 </body>
 </html>
