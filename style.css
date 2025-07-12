@@ -1,67 +1,87 @@
 
 body {
   margin: 0;
-  font-family: monospace;
-  background: black;
+  background-color: black;
   color: white;
+  font-family: monospace;
   text-align: center;
 }
-
-header {
-  background: black;
-  padding: 20px;
+header h1 {
+  font-size: 2em;
+  margin: 0.5em 0 0.2em;
 }
-
 nav a {
-  color: white;
   margin: 0 10px;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 0.9em;
 }
-
-.substack {
-  margin-top: 10px;
+.subscribe-box {
+  margin: 1em auto;
+  background-color: white;
+  padding: 1em;
+  width: 250px;
 }
-
-main {
-  background: #c9b795;
-  padding: 40px;
-}
-
-.pipes {
+.background {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 40px;
-  height: 300px;
+  height: 60vh;
+  background: #c3b28f;
+}
+.pipe {
+  width: 50px;
+  height: 200px;
+  margin: 0 10px;
+  background: pink;
   position: relative;
+}
+.pipe::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  background: repeating-linear-gradient(
+    45deg,
+    #888,
+    #888 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  transform: translateX(-50%);
+}
+.subscribe-box button {
+  padding: 5px 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribe-box .disclaimer {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+main {
+  background-color: #c5b58a;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 80vh;
+  padding: 20px;
+}
+
+.scene {
+  display: flex;
+  gap: 10px;
 }
 
 .pipe {
   width: 40px;
-  height: 120px;
-  background: pink;
+  height: 150px;
+  background-color: pink;
   position: relative;
-}
-
-.smoke {
-  width: 4px;
-  height: 60px;
-  background: repeating-linear-gradient(
-    45deg,
-    gray,
-    gray 4px,
-    transparent 4px,
-    transparent 8px
-  );
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: rise 3s ease-in-out infinite;
-}
-
-@keyframes rise {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  100% { transform: translate(-50%, -80px); opacity: 0; }
 }
