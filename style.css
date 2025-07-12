@@ -1,87 +1,47 @@
-
 body {
   margin: 0;
-  background-color: black;
-  color: white;
   font-family: monospace;
+  background: black;
+  color: white;
+}
+
+header {
   text-align: center;
+  padding: 20px;
 }
-header h1 {
-  font-size: 2em;
-  margin: 0.5em 0 0.2em;
-}
+
 nav a {
   margin: 0 10px;
   color: white;
   text-decoration: none;
-  font-size: 0.9em;
+  font-weight: bold;
 }
+
 .subscribe-box {
-  margin: 1em auto;
-  background-color: white;
-  padding: 1em;
-  width: 250px;
+  background: #222;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
 }
-.background {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 60vh;
-  background: #c3b28f;
+
+.subscribe-box input {
+  padding: 5px;
+  margin-right: 5px;
 }
-.pipe {
-  width: 50px;
-  height: 200px;
-  margin: 0 10px;
-  background: pink;
-  position: relative;
-}
-.pipe::before {
-  content: '';
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  width: 2px;
-  height: 80px;
-  background: repeating-linear-gradient(
-    45deg,
-    #888,
-    #888 5px,
-    transparent 5px,
-    transparent 10px
-  );
-  transform: translateX(-50%);
-}
+
 .subscribe-box button {
   padding: 5px 10px;
-  background-color: #444;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 
-.subscribe-box .disclaimer {
-  font-size: 10px;
+.subscribe-box small {
+  display: block;
   margin-top: 5px;
+  font-size: 10px;
+  color: #ccc;
 }
 
-main {
-  background-color: #c5b58a;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 80vh;
-  padding: 20px;
-}
-
-.scene {
-  display: flex;
-  gap: 10px;
-}
-
-.pipe {
-  width: 40px;
-  height: 150px;
-  background-color: pink;
-  position: relative;
+.main-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
