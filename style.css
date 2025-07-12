@@ -1,54 +1,67 @@
 
 body {
   margin: 0;
-  background-color: black;
-  color: white;
   font-family: monospace;
+  background: black;
+  color: white;
   text-align: center;
 }
-header h1 {
-  font-size: 2em;
-  margin: 0.5em 0 0.2em;
+
+header {
+  background: black;
+  padding: 20px;
 }
+
 nav a {
-  margin: 0 10px;
   color: white;
+  margin: 0 10px;
   text-decoration: none;
-  font-size: 0.9em;
+  font-weight: bold;
 }
-.subscribe-box {
-  margin: 1em auto;
-  background-color: white;
-  padding: 1em;
-  width: 250px;
+
+.substack {
+  margin-top: 10px;
 }
-.background {
+
+main {
+  background: #c9b795;
+  padding: 40px;
+}
+
+.pipes {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 60vh;
-  background: #c3b28f;
+  gap: 40px;
+  height: 300px;
+  position: relative;
 }
+
 .pipe {
-  width: 50px;
-  height: 200px;
-  margin: 0 10px;
+  width: 40px;
+  height: 120px;
   background: pink;
   position: relative;
 }
-.pipe::before {
-  content: '';
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  width: 2px;
-  height: 80px;
+
+.smoke {
+  width: 4px;
+  height: 60px;
   background: repeating-linear-gradient(
     45deg,
-    #888,
-    #888 5px,
-    transparent 5px,
-    transparent 10px
+    gray,
+    gray 4px,
+    transparent 4px,
+    transparent 8px
   );
+  position: absolute;
+  top: -60px;
+  left: 50%;
   transform: translateX(-50%);
+  animation: rise 3s ease-in-out infinite;
+}
+
+@keyframes rise {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, -80px); opacity: 0; }
 }
