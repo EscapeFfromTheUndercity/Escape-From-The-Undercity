@@ -2,29 +2,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escape from the Undercity</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .subscribe-box {
+      margin: 20px auto;
+      max-width: 400px;
+      background-color: white;
+      color: black;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    .background {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Escape from the Undercity</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Comic</a>
-      <a href="#">Shop</a>
-    </nav>
-  </header>
+  <h1>Escape from the Undercity</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="comic.html">Comic</a>
+    <a href="shop.html">Shop</a>
+  </nav>
 
   <div class="subscribe-box">
-    <iframe src="https://escapeundercity.substack.com/embed" width="320" height="120" style="border:1px solid #ccc; background:white;" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://escape.substack.com/embed" width="100%" height="80" style="border:0; background:white;" frameborder="0" scrolling="no"></iframe>
   </div>
 
-  <div class="smoke-scene">
-    <img src="pipes-placeholder.png" alt="Pipes" class="background-img">
-    <div class="smoke-layer"></div>
-  </div>
+  <img src="pipes-placeholder.png" alt="Pipes background" class="background" />
 </body>
 </html>
