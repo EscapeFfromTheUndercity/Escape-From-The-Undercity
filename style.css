@@ -1,46 +1,50 @@
 body {
     margin: 0;
-    background-color: black;
+    background-color: #000;
     color: white;
     font-family: monospace;
     text-align: center;
 }
+
 header {
-    padding: 20px 0;
+    padding: 1em;
 }
+
 nav a {
-    margin: 0 10px;
-    color: white;
+    margin: 0 1em;
     text-decoration: none;
+    color: white;
     font-weight: bold;
 }
+
 main {
-    background-color: #c2b194;
-    padding: 100px 0;
-}
-.pipes-container {
+    background-color: #c4b293;
+    height: 400px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
 }
+
+.pipes {
+    display: flex;
+    gap: 20px;
+    animation: rise 3s ease-in-out forwards;
+}
+
 .pipe {
     width: 40px;
     height: 150px;
     background-color: pink;
-    position: relative;
+    border-top: 3px dashed #444;
 }
-.smoke {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    width: 2px;
-    height: 30px;
-    background: repeating-linear-gradient(180deg, gray, gray 2px, transparent 2px, transparent 4px);
-    transform: translateX(-50%);
-    animation: rise 2s linear infinite;
-    opacity: 0.6;
-}
+
 @keyframes rise {
-    0% { transform: translate(-50%, 0); opacity: 0.6; }
-    100% { transform: translate(-50%, -20px); opacity: 0; }
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
