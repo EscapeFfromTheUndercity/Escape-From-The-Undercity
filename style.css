@@ -1,0 +1,11 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  padding: 2em;
+}
+a {
+  color: #eee;
+  text-decoration: underline;
+}
