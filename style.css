@@ -1,18 +1,40 @@
-body {
+<style>
+  body {
     background-color: black;
     color: white;
     font-family: monospace;
     text-align: center;
-    margin-top: 50px;
-}
-a {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    padding: 20px;
+  }
+
+  nav a {
     color: lightblue;
+    margin: 0 10px;
     text-decoration: none;
-}
-a:hover {
+  }
+
+  nav a:hover {
     text-decoration: underline;
-}
-img {
-    max-width: 90%;
+  }
+
+  h1 {
     margin: 20px 0;
-}
+  }
+
+  .comic-page {
+    margin-bottom: 40px;
+  }
+
+  img {
+    max-width: 90vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #111;
+  }
+</style>
