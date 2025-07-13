@@ -1,48 +1,51 @@
-<style>
-  body {
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
+body {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  margin: 0;
+  padding: 2em;
+}
 
-  nav {
-    padding: 20px;
-  }
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
 
-  nav a {
-    color: lightblue;
-    margin: 0 10px;
-    text-decoration: none;
-  }
+nav {
+  margin: 1em 0;
+}
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+a {
+  color: #7ec8ff;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
 
-  h1 {
-    font-size: 2.2em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  h2 {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-  }
+.comic img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 1em auto;
+}
 
-  .comic-page {
-    margin-bottom: 40px;
-  }
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  img {
-    max-width: 90vw;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 0 10px #111;
-  }
-</style>
+.about-minimal {
+  font-size: 1.5em;
+}
+
+.neon {
+  font-size: 2em;
+  color: red;
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red;
+}
