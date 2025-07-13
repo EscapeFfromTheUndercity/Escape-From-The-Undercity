@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  padding: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
