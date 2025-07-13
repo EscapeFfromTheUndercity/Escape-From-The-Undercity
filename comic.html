@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Comic - Escape from the Undercity</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+      margin: 30px auto;
+      display: block;
+    }
+    .caption {
+      color: white;
+      text-align: center;
+      font-family: monospace;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <h1>Escape from the Undercity</h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="shop.html">Shop</a>
-  </nav>
-  <div class="comic">
-    <img src="ep1-page1.jpg" alt="Episode 1 - Page 1">
-    <img src="ep1-page2.png" alt="Episode 1 - Page 2">
-    <img src="ep2-page1.png" alt="Episode 2 - Page 1">
+  <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="shop.html">Shop</a></p>
+
+  <div>
+    <img src="ep1-page1.jpg" alt="Episode 1 - Page 1" />
+    <div class="caption">Episode 1 - Page 1</div>
+
+    <img src="ep1-page2.png" alt="Episode 1 - Page 2" />
+    <div class="caption">Episode 1 - Page 2</div>
+
+    <img src="ep2-page1.png" alt="Episode 2 - Page 1" />
+    <div class="caption">Episode 2 - Page 1</div>
   </div>
 </body>
 </html>
