@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 2em;
+}
+a {
+  color: #00ffff;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+a:hover {
+  text-decoration: underline;
+}
