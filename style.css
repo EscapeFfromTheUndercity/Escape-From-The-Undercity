@@ -1,11 +1,18 @@
 body {
-  background-color: black;
-  color: white;
-  font-family: monospace;
-  text-align: center;
-  padding: 2em;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 50px;
 }
 a {
-  color: #eee;
-  text-decoration: underline;
+    color: lightblue;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+img {
+    max-width: 90%;
+    margin: 20px 0;
 }
