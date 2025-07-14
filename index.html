@@ -2,49 +2,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Escape from the Undercity</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: 'Fira Code', monospace;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            padding-top: 60px;
-        }
-        nav {
-            margin: 15px 0;
-        }
-        nav a {
-            color: #66ccff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .substack-embed {
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape from the Undercity</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding-top: 40px;
+    }
+    nav {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+    nav a {
+      color: #3399ff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    nav span {
+      color: #999;
+      margin: 0 5px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .closed {
+      font-size: 2rem;
+      color: yellow;
+      margin-top: 60px;
+      text-shadow: 0 0 10px yellow;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Escape from the Undercity</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="comic.html">Comic</a> |
-            <a href="about.html">$h!t-Fi</a> |
-            <a href="shop.html">Shop</a>
-        </nav>
-        <div class="substack-embed">
-            <iframe src="https://escapefromtheundercity.substack.com/embed" width="480" height="120" style="border:1px solid #ddd; background:white;" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </div>
+  <header>
+    <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="index.html">Home</a><span>|</span>
+      <a href="comic.html">Comic</a><span>|</span>
+      <a href="about.html">About</a><span>|</span>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+  <div class="closed">CLOSED</div>
 </body>
 </html>
