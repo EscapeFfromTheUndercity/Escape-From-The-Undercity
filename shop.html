@@ -1,59 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shop - Escape from the Undercity</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white;
-            font-family: monospace;
-            text-align: center;
-        }
-        header {
-            padding-top: 60px; /* Ensures consistent spacing across pages */
-        }
-        h1 {
-            font-size: 2em;
-            margin: 0;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            color: #00aaff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .neon {
-            font-size: 2em;
-            color: yellow;
-            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
-            animation: flicker 1.5s infinite alternate;
-        }
-        @keyframes flicker {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Shop - Escape from the Undercity</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Escape from the Undercity</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="comic.html">Comic</a> |
-            <a href="about.html">About</a> |
-            <a href="shop.html">Shop</a>
-        </nav>
-    </header>
-    <main>
-        <p class="neon">CLOSED</p>
-    </main>
+  <h1>Escape from the Undercity</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="comic.html">Comic</a> |
+    <a href="about.html">About</a> |
+    <a href="shop.html">Shop</a>
+  </nav>
+  <div class="content">
+    <iframe src="https://escapefromtheundercity.substack.com/embed" width="480" height="160" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  </div>
 </body>
 </html>

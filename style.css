@@ -1,76 +1,29 @@
-
 body {
   background-color: black;
   color: white;
   font-family: monospace;
-  margin: 0;
-  padding: 0;
   text-align: center;
-}
-
-header {
-  padding: 1em 0;
-  border-bottom: 1px solid #333;
+  margin: 0;
+  padding: 2rem 0;
 }
 
 h1 {
-  margin: 0.2em 0;
   font-size: 2em;
-}
-
-nav {
-  margin: 0.5em 0;
+  margin-bottom: 0.5em;
 }
 
 nav a {
-  color: #7ec8f0;
-  margin: 0 10px;
+  color: #66ccff;
   text-decoration: none;
-  font-size: 1.1em;
+  padding: 0 10px;
+  font-size: 1em;
 }
 
-main {
-  margin-top: 3em;
+nav {
+  margin-bottom: 2rem;
 }
 
-.neon-sign {
-  font-size: 3em;
+.closed {
   color: yellow;
-  text-shadow:
-    0 0 5px #ff0,
-    0 0 10px #ff0,
-    0 0 20px #ffa500,
-    0 0 40px #ffa500;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow:
-      0 0 5px #ff0,
-      0 0 10px #ff0,
-      0 0 20px #ffa500,
-      0 0 40px #ffa500;
-  }
-  to {
-    text-shadow:
-      0 0 2px #ff0,
-      0 0 5px #ff0,
-      0 0 10px #ffa500,
-      0 0 20px #ffa500;
-  }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  nav a {
-    font-size: 1em;
-  }
-
-  .neon-sign {
-    font-size: 2em;
-  }
+  font-size: 1.5em;
 }
