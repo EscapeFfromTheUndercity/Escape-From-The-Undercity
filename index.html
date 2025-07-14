@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Escape from the Undercity</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             background-color: black;
             color: white;
-            text-align: center;
             font-family: monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
         }
+
         nav {
-            margin: 20px 0;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
+
         nav a {
-            color: #89CFF0;
+            color: #7ecfff;
             text-decoration: none;
             margin: 0 10px;
         }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+
+        nav a:hover {
+            text-decoration: underline;
         }
-        iframe {
-            border: none;
-            width: 480px;
-            height: 160px;
-            max-width: 90%;
+
+        .substack-embed {
+            margin-top: 100px; /* Adds spacing to push menu down */
         }
     </style>
 </head>
@@ -38,8 +42,17 @@
         <a href="about.html">$h!t-Fi</a> |
         <a href="shop.html">Shop</a>
     </nav>
-    <iframe src="https://escapefromtheundercity.substack.com/embed" 
-            allowfullscreen="" 
-            scrolling="no"></iframe>
+
+    <div class="substack-embed">
+        <iframe src="https://escapefromtheundercity.substack.com/embed" 
+                width="480" height="160" style="border:1px solid #ddd; background:white;" 
+                frameborder="0" scrolling="no"></iframe>
+    </div>
+</body>
+</html>
+
+  <div class="substack-embed">
+    <iframe src="https://escapefromtheundercity.substack.com/embed" width="480" height="160" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  </div>
 </body>
 </html>
