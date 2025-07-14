@@ -3,37 +3,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape from the Undercity</title>
     <style>
         body {
             background-color: black;
             color: white;
             font-family: monospace;
-            text-align: center;
+            margin: 0;
+            padding: 0;
         }
-        nav a {
-            color: #00BFFF;
-            text-decoration: none;
-            margin: 0 10px;
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+        }
+        h1 {
+            font-size: 2.5rem;
         }
         nav {
-            margin-bottom: 40px;
+            margin-top: 10px;
         }
-        .substack {
-            margin-top: 40px;
+        nav a {
+            color: #66ccff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 60px;
+            min-height: calc(100vh - 120px);
         }
     </style>
 </head>
 <body>
-    <h1>Escape from the Undercity</h1>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="comic.html">Comic</a> |
-        <a href="about.html">About</a> |
-        <a href="shop.html">Shop</a>
-    </nav>
-    <div class="substack">
-        <iframe src="https://escape.substack.com/embed" width="480" height="160" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-    </div>
+    <header>
+        <h1>Escape from the Undercity</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="comic.html">Comic</a> |
+            <a href="about.html">About</a> |
+            <a href="shop.html">Shop</a>
+        </nav>
+    </header>
+    <main>
+        <p style="color: yellow;">CLOSED</p>
+    </main>
 </body>
 </html>

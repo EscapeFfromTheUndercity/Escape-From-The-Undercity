@@ -1,20 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Comic - Escape from the Undercity</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape from the Undercity</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #66ccff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 60px;
+            min-height: calc(100vh - 120px);
+        }
+    </style>
 </head>
 <body>
-  <h1>Escape from the Undercity</h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="comic.html">Comic</a> |
-    <a href="about.html">About</a> |
-    <a href="shop.html">Shop</a>
-  </nav>
-  <div class="content">
-    <p>[Comic content will go here.]</p>
-  </div>
+    <header>
+        <h1>Escape from the Undercity</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="comic.html">Comic</a> |
+            <a href="about.html">About</a> |
+            <a href="shop.html">Shop</a>
+        </nav>
+    </header>
+    <main>
+        <p>[Comic content will go here.]</p>
+    </main>
 </body>
 </html>
