@@ -1,63 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop - Escape from the Undercity</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: monospace;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #111;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav a {
-      color: lightblue;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .neon {
-      color: yellow;
-      font-size: 48px;
-      font-weight: bold;
-      text-shadow:
-        0 0 5px #FFD700,
-        0 0 10px #FFD700,
-        0 0 20px #FFD700,
-        0 0 40px #FFA500,
-        0 0 80px #FFA500;
-      animation: flicker 1.5s infinite alternate;
-      margin-top: 100px;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.4; }
-      100% { opacity: 1; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="comic.html">Comic</a>
-    <a href="about.html">About</a>
-    <a href="shop.html">Shop</a>
-  </nav>
-  <div class="neon">CLOSED</div>
+  <header>
+    <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="comic.html">Comic</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+  <main>
+    <div class="neon-sign">CLOSED</div>
+  </main>
 </body>
 </html>
