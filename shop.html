@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop - Escape from the Undercity</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Shop - Escape from the Undercity</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #89CFF0;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .neon-text {
+            font-size: 2em;
+            color: #ffff66;
+            text-shadow: 0 0 5px #ffff66, 0 0 10px #ffff66, 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+            animation: blink 1.5s infinite alternate;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
 </head>
 <body>
-  <header>
     <h1>Escape from the Undercity</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="comic.html">Comic</a>
-      <a href="about.html">About</a>
-      <a href="shop.html">Shop</a>
+        <a href="index.html">Home</a> |
+        <a href="comic.html">Comic</a> |
+        <a href="about.html">$h!t-Fi</a> |
+        <a href="shop.html">Shop</a>
     </nav>
-  </header>
-  <main>
-    <div class="neon-sign">CLOSED</div>
-  </main>
+    <div class="neon-text">CLOSED</div>
 </body>
 </html>
