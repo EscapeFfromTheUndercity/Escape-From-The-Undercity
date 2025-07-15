@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,39 +37,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 60px;
+      justify-content: center;
       min-height: calc(100vh - 120px);
     }
-
-    .neon-text {
+    .neon {
       font-size: 3rem;
-      font-weight: bold;
-      color: #ffff00;
-      text-shadow:
-        0 0 5px #ffff00,
-        0 0 10px #ffcc00,
-        0 0 20px #ff9900,
-        0 0 40px #ff6600;
-      animation: neon-flash 8s infinite;
+      color: yellow;
+      animation: flicker 4s infinite;
     }
-
-    @keyframes neon-flash {
+    @keyframes flicker {
       0%, 49% {
         opacity: 1;
-        text-shadow:
-          0 0 5px #ffff00,
-          0 0 10px #ffcc00,
-          0 0 20px #ff9900,
-          0 0 40px #ff6600;
+        text-shadow: 0 0 10px yellow, 0 0 20px yellow;
       }
-      50%, 99% {
-        opacity: 0.3;
+      50%, 100% {
+        opacity: 0.1;
         text-shadow: none;
-        color: #333300;
-      }
-      100% {
-        opacity: 1;
       }
     }
   </style>
@@ -84,7 +68,7 @@
     </nav>
   </header>
   <main>
-    <div class="neon-text">CLOSED</div>
+    <div class="neon">CLOSED</div>
   </main>
 </body>
 </html>
