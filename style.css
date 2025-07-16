@@ -1,57 +1,58 @@
 
 body {
-  background-color: black;
-  color: white;
-  font-family: monospace;
   margin: 0;
-  padding: 0;
+  background-color: black;
+  font-family: monospace;
+  color: white;
 }
 
 header {
   background-color: black;
-  padding: 1em;
-  text-align: center;
-}
-
-header h1 {
   color: white;
-  margin: 0;
-  font-size: 2em;
+  text-align: center;
+  padding: 10px 0;
 }
 
 nav a {
-  color: #3399ff;
-  text-decoration: none;
+  color: #00f;
   margin: 0 10px;
+  text-decoration: none;
 }
 
 .subscribe-section {
-  background-color: #d8cbb2;
-  color: black;
+  background-color: #d8c6a3;
+  padding: 30px 0;
   text-align: center;
-  padding: 2em;
-  position: relative;
-  z-index: 2;
 }
 
 .subscribe-section h2 {
-  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-.subscribe-section form {
-  margin-top: 1em;
+.subscribe-section input {
+  padding: 8px;
+  font-family: monospace;
 }
 
-.chimneys {
+.subscribe-section button {
+  padding: 8px 12px;
+  font-family: monospace;
+  background: black;
+  color: white;
+  border: none;
+}
+
+.pipes-section {
   position: relative;
-  background-color: black;
+  background: black;
   text-align: center;
   overflow: hidden;
 }
 
-.chimney-image {
+.pipes-image {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 #smokeCanvas {
