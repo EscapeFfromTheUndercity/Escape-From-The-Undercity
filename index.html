@@ -9,15 +9,47 @@
   <style>
     body {
       margin: 0;
-      background-color: #d6cec0;
+      background-color: black;
+      color: white;
       font-family: monospace;
+    }
+
+    header {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+      padding-bottom: 10px;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      color: #3366cc;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .main {
+      background-color: #d6cec0;
+      color: black;
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      position: relative;
+      overflow: hidden;
     }
 
     .chimneys {
       position: relative;
       width: 100%;
       overflow: hidden;
-      margin-top: 100px;
     }
 
     .chimneys img {
@@ -55,9 +87,13 @@
     }
 
     .subscribe-box {
-      background-color: #d6cec0;
       padding: 40px 20px;
-      text-align: center;
+      background-color: #d6cec0;
+    }
+
+    .subscribe-box h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
     }
 
     .subscribe-box input[type="email"] {
@@ -80,27 +116,31 @@
 </head>
 <body>
 
-  <!-- Top Menu (pulled from existing site styling) -->
-  <div style="background-color:white; color:#3366cc; padding:20px; text-align:center; font-size:20px; font-family:monospace;">
-    <a href="index.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">HOME</a>
-    <a href="comic.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">ARCHIVE</a>
-    <a href="shop.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">STORE</a>
-    <a href="about.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">ABOUT</a>
-  </div>
+  <!-- Header matches all other pages -->
+  <header>
+    <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="comic.html">Comic</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
 
-  <!-- Smoking Chimneys Image with Animation -->
-  <div class="chimneys">
-    <img src="smoking_chimneys_base.png" alt="Chimneys">
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-  </div>
+  <!-- Main area with chimney and smoke effect -->
+  <div class="main">
+    <div class="chimneys">
+      <img src="smoking_chimneys_base.png" alt="Smokestacks" />
+      <div class="smoke"></div>
+      <div class="smoke"></div>
+      <div class="smoke"></div>
+    </div>
 
-  <!-- Subscribe Box -->
-  <div class="subscribe-box">
-    <h2>Subscribe to Escape</h2>
-    <input type="email" placeholder="Email address" />
-    <button>SUBSCRIBE</button>
+    <div class="subscribe-box">
+      <h2>Subscribe to Escape</h2>
+      <input type="email" placeholder="Email address" />
+      <button>SUBSCRIBE</button>
+    </div>
   </div>
 
 </body>
