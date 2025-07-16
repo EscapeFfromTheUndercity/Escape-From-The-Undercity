@@ -1,1 +1,0 @@
-// Simulated smoke.js animating all 5 chimneys
