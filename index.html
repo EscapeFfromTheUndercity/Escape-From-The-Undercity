@@ -5,34 +5,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escape from the Undercity</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       background-color: #d6cec0;
       font-family: monospace;
-      overflow-x: hidden;
-    }
-
-    header {
-      background-color: #d6cec0;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
     }
 
     .chimneys {
       position: relative;
-      margin-top: 80px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 100px;
+    }
+
+    .chimneys img {
+      width: 100%;
+      display: block;
     }
 
     .smoke {
       position: absolute;
-      bottom: 100px;
+      bottom: 120px;
       width: 100px;
       height: 100px;
       background: radial-gradient(ellipse at center, #e9e5dd 0%, transparent 70%);
@@ -40,20 +35,9 @@
       opacity: 0.8;
     }
 
-    .smoke:nth-child(1) {
-      left: 80px;
-      animation-delay: 0s;
-    }
-
-    .smoke:nth-child(2) {
-      left: 160px;
-      animation-delay: 2s;
-    }
-
-    .smoke:nth-child(3) {
-      left: 240px;
-      animation-delay: 4s;
-    }
+    .smoke:nth-child(2) { left: 80px; animation-delay: 0s; }
+    .smoke:nth-child(3) { left: 160px; animation-delay: 2s; }
+    .smoke:nth-child(4) { left: 240px; animation-delay: 4s; }
 
     @keyframes rise {
       0% {
@@ -69,15 +53,55 @@
         opacity: 0;
       }
     }
+
+    .subscribe-box {
+      background-color: #d6cec0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .subscribe-box input[type="email"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+      max-width: 80%;
+    }
+
+    .subscribe-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <header>HOME | ARCHIVE | STORE | ABOUT</header>
+
+  <!-- Top Menu (pulled from existing site styling) -->
+  <div style="background-color:white; color:#3366cc; padding:20px; text-align:center; font-size:20px; font-family:monospace;">
+    <a href="index.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">HOME</a>
+    <a href="comic.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">ARCHIVE</a>
+    <a href="shop.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">STORE</a>
+    <a href="about.html" style="margin:0 15px; color:#3366cc; text-decoration:none;">ABOUT</a>
+  </div>
+
+  <!-- Smoking Chimneys Image with Animation -->
   <div class="chimneys">
-    <img src="smoking_chimneys_base.png" width="100%" />
+    <img src="smoking_chimneys_base.png" alt="Chimneys">
     <div class="smoke"></div>
     <div class="smoke"></div>
     <div class="smoke"></div>
   </div>
+
+  <!-- Subscribe Box -->
+  <div class="subscribe-box">
+    <h2>Subscribe to Escape</h2>
+    <input type="email" placeholder="Email address" />
+    <button>SUBSCRIBE</button>
+  </div>
+
 </body>
 </html>
