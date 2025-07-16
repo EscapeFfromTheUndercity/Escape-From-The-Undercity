@@ -3,98 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Escape from the Undercity</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: black;
-      font-family: monospace;
-      color: white;
-    }
-
-    header {
-      text-align: center;
-      padding-top: 30px;
-    }
-
-    header h1 {
-      font-size: 32px;
-      margin: 0;
-      padding-bottom: 10px;
-    }
-
-    nav {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    nav a {
-      color: #3366cc;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-    }
-
-    .subscribe-area {
-      background-color: #d6cec0;
-      color: black;
-      text-align: center;
-      padding: 60px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .subscribe-area h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .subscribe-area input[type="email"] {
-      padding: 10px;
-      font-size: 16px;
-      width: 250px;
-      max-width: 80%;
-    }
-
-    .subscribe-area button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-left: 10px;
-      background-color: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .smoke {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(ellipse at center, #e9e5dd 0%, transparent 70%);
-      animation: rise 6s infinite ease-in-out;
-      opacity: 0.8;
-      z-index: 1;
-    }
-
-    .smoke:nth-child(2) { bottom: 20px; left: 20%; animation-delay: 0s; }
-    .smoke:nth-child(3) { bottom: 30px; left: 40%; animation-delay: 2s; }
-    .smoke:nth-child(4) { bottom: 40px; left: 60%; animation-delay: 4s; }
-
-    @keyframes rise {
-      0% { transform: translateY(0px) scale(1); opacity: 0.8; }
-      50% { transform: translateY(-80px) scale(1.2); opacity: 0.4; }
-      100% { transform: translateY(-160px) scale(1.4); opacity: 0; }
-    }
-
-    .footer-img {
-      width: 100%;
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
     <h1>Escape from the Undercity</h1>
     <nav>
@@ -105,17 +18,20 @@
     </nav>
   </header>
 
-  <div class="subscribe-area">
-    <h2>Join the Resistance!</h2>
-    <input type="email" placeholder="Email address" />
-    <button>Subscribe</button>
+  <div class="subscribe-section">
+    <div id="smoke-container"></div>
 
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
+    <div class="subscribe-box">
+      <h2>Join the Resistance!</h2>
+      <form>
+        <input type="email" placeholder="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
   </div>
 
-  <img class="footer-img" src="pipes_2.png" alt="Chimneys at bottom" />
+  <img src="images/pipes2.jpeg" alt="Pipes" class="footer-image" />
 
+  <script src="scripts/smoke.js"></script>
 </body>
 </html>
