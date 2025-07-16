@@ -1,19 +1,64 @@
 
-const smokeContainer = document.getElementById("smoke-container");
-const pipePositions = [10, 60, 130, 220, 300];
-const pipeColors = ["#7d6f78", "#c98b9c", "#cdb6ac", "#ea9eae", "#b6b3b9"];
+const canvas = document.getElementById("smokeCanvas");
+const ctx = canvas.getContext("2d");
 
-function createSmoke(x, color) {
-  const smoke = document.createElement("div");
-  smoke.classList.add("smoke");
-  smoke.style.left = `${x}px`;
-  smoke.style.background = color;
-  smokeContainer.appendChild(smoke);
-  setTimeout(() => smoke.remove(), 8000);
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
-setInterval(() => {
-  pipePositions.forEach((x, i) => {
-    createSmoke(x, pipeColors[i]);
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+const smokeParticles = [];
+
+function createSmokeParticle(x, y, color) {
+  return {
+    x,
+    y,
+    alpha: 1,
+    radius: Math.random() * 20 + 10,
+    speedY: Math.random() * 0.5 + 0.5,
+    driftX: Math.random() * 1 - 0.5,
+    color
+  };
+}
+
+function animateSmoke() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  smokeParticles.forEach(p => {
+    p.y -= p.speedY;
+    p.x += p.driftX;
+    p.alpha -= 0.002;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+    ctx.fill();
   });
-}, 800);
+
+  for (let i = smokeParticles.length - 1; i >= 0; i--) {
+    if (smokeParticles[i].alpha <= 0) {
+      smokeParticles.splice(i, 1);
+    }
+  }
+
+  requestAnimationFrame(animateSmoke);
+}
+
+function emitSmoke() {
+  const baseY = canvas.height - 180;
+  const chimneyXs = [150, 250, 340, 440, 530, 620];
+  const colors = ["232,226,213", "132,132,132", "101,83,66"];
+
+  chimneyXs.forEach((x, i) => {
+    const color = colors[i % colors.length];
+    for (let j = 0; j < 2; j++) {
+      smokeParticles.push(createSmokeParticle(x, baseY, color));
+    }
+  });
+
+  setTimeout(emitSmoke, 250);
+}
+
+emitSmoke();
+animateSmoke();

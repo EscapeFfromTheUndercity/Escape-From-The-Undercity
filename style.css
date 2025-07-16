@@ -1,84 +1,62 @@
 
 body {
-  margin: 0;
-  font-family: monospace;
   background-color: black;
   color: white;
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  background: black;
-  color: white;
+  background-color: black;
+  padding: 1em;
   text-align: center;
-  padding: 10px 0;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  font-size: 2em;
 }
 
 nav a {
-  margin: 0 10px;
-  color: #66f;
+  color: #3399ff;
   text-decoration: none;
+  margin: 0 10px;
 }
 
 .subscribe-section {
+  background-color: #d8cbb2;
+  color: black;
+  text-align: center;
+  padding: 2em;
   position: relative;
-  background-color: #d9cdb8;
-  height: 400px;
+  z-index: 2;
+}
+
+.subscribe-section h2 {
+  font-size: 1.5em;
+}
+
+.subscribe-section form {
+  margin-top: 1em;
+}
+
+.chimneys {
+  position: relative;
+  background-color: black;
+  text-align: center;
   overflow: hidden;
 }
 
-.subscribe-box {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding-top: 20px;
-}
-
-.subscribe-box input[type="email"] {
-  padding: 8px;
-  font-size: 16px;
-}
-
-.subscribe-box button {
-  padding: 8px 16px;
-  font-size: 16px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#smoke-container {
-  position: absolute;
-  bottom: 120px;
+.chimney-image {
   width: 100%;
-  height: 300px;
-  z-index: 1;
+  height: auto;
+}
+
+#smokeCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
   pointer-events: none;
-}
-
-.smoke {
-  position: absolute;
-  bottom: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: rise 8s linear infinite;
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-280px) scale(1.2);
-    opacity: 0;
-  }
-}
-
-.footer-image {
-  width: 100%;
-  display: block;
-  margin: 0;
 }
