@@ -1,1 +1,87 @@
-<!-- Simulated index.html with all 5 chimneys animated -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape from the Undercity</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #66ccff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 60px;
+      min-height: calc(100vh - 120px);
+    }
+    .substack-form {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .substack-form input[type="email"] {
+      padding: 8px;
+      font-family: monospace;
+      width: 250px;
+    }
+    .substack-form input[type="submit"] {
+      padding: 8px 16px;
+      margin-left: 10px;
+      font-family: monospace;
+      background-color: #66ccff;
+      border: none;
+      cursor: pointer;
+    }
+    .substack-form label {
+      font-size: 1.2rem;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="comic.html">Comic</a> |
+      <a href="about.html">About</a> |
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="substack-form">
+      <form action="https://peterlally.substack.com/subscribe" method="post" target="_blank">
+        <label for="email">Join the Resistance!!!</label><br><br>
+        <input type="email" name="email" placeholder="Your email..." required>
+        <input type="submit" value="Subscribe">
+      </form>
+    </section>
+  </main>
+</body>
+</html>
