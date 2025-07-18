@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,76 +13,38 @@
       padding: 0;
       text-align: center;
     }
-
     header {
-      background-color: black;
-      padding: 20px 0 10px 0;
+      padding: 2rem 0 1rem;
     }
-
-    h1 {
-      margin: 0;
-      font-size: 2em;
-      color: white;
-    }
-
-    nav {
-      margin: 10px 0;
-    }
-
     nav a {
-      color: white;
-      text-decoration: none;
+      color: #00aaff;
       margin: 0 10px;
-      font-size: 1.2em;
+      text-decoration: none;
     }
-
     .subscribe {
-      background-color: beige;
-      padding: 30px 10px;
-      margin-top: 20px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background-color: black;
+      z-index: 2;
+      position: relative;
     }
-
-    .subscribe h2 {
-      margin: 0 0 10px;
-      font-size: 1.5em;
+    .subscribe input {
+      padding: 5px;
+      font-family: monospace;
+    }
+    .subscribe button {
+      padding: 5px 10px;
+      background-color: #00aaff;
+      border: none;
       color: black;
+      font-family: monospace;
+      cursor: pointer;
     }
-
     .smoke {
       display: block;
       margin: 0 auto;
       max-width: 100%;
       height: auto;
-    }
-
-    .chimneys {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-      margin-top: -5px;
-    }
-
-    input[type="email"] {
-      padding: 10px;
-      font-size: 1em;
-      margin-right: 10px;
-    }
-
-    button {
-      padding: 10px;
-      font-size: 1em;
-      background-color: #00aaff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 5px 0;
-      }
     }
   </style>
 </head>
@@ -99,12 +60,11 @@
   </header>
 
   <div class="subscribe">
-    <h2>Join the Resistance</h2>
+    <h3 style="color: yellow;">Join the Resistance</h3>
     <input type="email" placeholder="Your email...">
     <button>Subscribe</button>
   </div>
 
-  <img src="smoke.gif" alt="Rising smoke animation" class="smoke" />
-  <img src="chimneys.png" alt="Factory chimneys" class="chimneys" />
+  <img src="Smoke.gif" alt="Rising smoke animation with chimneys" class="smoke" />
 </body>
 </html>
