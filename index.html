@@ -69,32 +69,31 @@
       color: yellow;
     }
 
-    .pipes-container {
-      width: 100%;
-      margin-top: 150px;
-      position: relative;
-      z-index: 1;
-    }
-    .pipes-image {
-      width: 100%;
-      display: block;
-    }
-
     .smoke-container {
-      position: absolute;
-      top: calc(100vh - 360px); /* Tweak as needed */
-      left: 0;
       width: 100%;
       height: 350px;
       overflow: hidden;
+      margin-top: -80px;
+      position: relative;
       z-index: 2;
       pointer-events: none;
     }
 
     .smoke-overlay {
       width: 100%;
-      height: auto;
       opacity: 0.35;
+      display: block;
+    }
+
+    .pipes-container {
+      width: 100%;
+      margin-top: -100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pipes-image {
+      width: 100%;
       display: block;
     }
   </style>
@@ -119,12 +118,12 @@
       </form>
     </section>
 
-    <div class="pipes-container">
-      <img src="pipes2.jpeg" alt="Factory chimneys" class="pipes-image">
-    </div>
-
     <div class="smoke-container">
       <img src="Smoke.gif" alt="Smoke rising" class="smoke-overlay">
+    </div>
+
+    <div class="pipes-container">
+      <img src="pipes2.jpeg" alt="Factory chimneys" class="pipes-image">
     </div>
   </main>
 </body>
