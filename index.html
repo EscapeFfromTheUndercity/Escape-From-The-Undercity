@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Escape from the Undercity</title>
   <style>
     body {
@@ -11,90 +12,50 @@
       font-family: monospace;
       margin: 0;
       padding: 0;
-      position: relative;
+      text-align: center;
     }
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 40px;
-      position: relative;
-      z-index: 3;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 10px;
+      padding: 2rem 0 1rem;
     }
     nav a {
-      color: #66ccff;
+      color: #00aaff;
       margin: 0 10px;
       text-decoration: none;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding-top: 60px;
-      padding-bottom: 0;
-      position: relative;
+    .subscribe {
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background-color: black;
       z-index: 2;
-    }
-    .substack-form {
-      margin-top: 50px;
-      text-align: center;
       position: relative;
-      z-index: 3;
     }
-    .substack-form input[type="email"] {
-      padding: 8px;
+    .subscribe input {
+      padding: 5px;
       font-family: monospace;
-      width: 250px;
     }
-    .substack-form input[type="submit"] {
-      padding: 8px 16px;
-      margin-left: 10px;
-      font-family: monospace;
-      background-color: #66ccff;
+    .subscribe button {
+      padding: 5px 10px;
+      background-color: #00aaff;
       border: none;
+      color: black;
+      font-family: monospace;
       cursor: pointer;
     }
-    .substack-form label {
-      font-size: 1.2rem;
-      color: yellow;
-    }
-
-    .smoke-container {
+    .smoke {
       width: 100%;
-      height: 350px;
-      overflow: hidden;
-      margin-top: -80px;
-      position: relative;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .smoke-overlay {
-      width: 100%;
-      opacity: 0.35;
-      display: block;
-    }
-
-    .pipes-container {
-      width: 100%;
-      margin-top: -100px;
+      height: auto;
+      margin-top: -30px;
       position: relative;
       z-index: 1;
     }
-
-    .pipes-image {
-      width: 100%;
+    .spacer {
+      height: 300px;
+    }
+    .pipes {
       display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 100%;
     }
   </style>
 </head>
@@ -109,22 +70,16 @@
     </nav>
   </header>
 
-  <main>
-    <section class="substack-form">
-      <form action="https://peterlally.substack.com/subscribe" method="post" target="_blank">
-        <label for="email">Join the Resistance</label><br><br>
-        <input type="email" name="email" placeholder="Your email..." required>
-        <input type="submit" value="Subscribe">
-      </form>
-    </section>
+  <div class="subscribe">
+    <h3 style="color: yellow;">Join the Resistance</h3>
+    <input type="email" placeholder="Your email...">
+    <button>Subscribe</button>
+  </div>
 
-    <div class="smoke-container">
-      <img src="Smoke.gif" alt="Smoke rising" class="smoke-overlay">
-    </div>
+  <img src="smoke.gif" alt="Rising smoke animation" class="smoke" />
 
-    <div class="pipes-container">
-      <img src="pipes2.jpeg" alt="Factory chimneys" class="pipes-image">
-    </div>
-  </main>
+  <div class="spacer"></div>
+
+  <img src="pipes 2.jpeg" alt="Factory chimneys" class="pipes" />
 </body>
 </html>
