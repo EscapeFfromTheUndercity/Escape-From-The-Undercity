@@ -35,12 +35,6 @@
       text-decoration: underline;
     }
 
-    @media (min-width: 600px) {
-      nav a {
-        font-size: 1.4rem;
-      }
-    }
-
     .subscribe {
       margin: 1.5rem auto;
       padding: 1rem;
@@ -48,9 +42,14 @@
       z-index: 2;
       position: relative;
     }
+    .subscribe h3 {
+      color: yellow;
+      font-size: 1rem;
+    }
     .subscribe input {
       padding: 5px;
       font-family: monospace;
+      font-size: 1rem;
     }
     .subscribe button {
       padding: 5px 10px;
@@ -58,8 +57,32 @@
       border: none;
       color: black;
       font-family: monospace;
+      font-size: 1rem;
       cursor: pointer;
     }
+
+    @media (min-width: 600px) {
+      nav a {
+        font-size: 1.6rem;
+        padding: 8px 14px;
+      }
+
+      .subscribe h3 {
+        font-size: 1.6rem;
+      }
+
+      .subscribe input {
+        font-size: 1.2rem;
+        padding: 10px;
+        width: 250px;
+      }
+
+      .subscribe button {
+        font-size: 1.2rem;
+        padding: 10px 16px;
+      }
+    }
+
     .smoke {
       display: block;
       margin: 0 auto;
@@ -80,7 +103,7 @@
   </header>
 
   <div class="subscribe">
-    <h3 style="color: yellow;">Join the Resistance</h3>
+    <h3>Join the Resistance</h3>
     <input type="email" placeholder="Your email...">
     <button>Subscribe</button>
   </div>
