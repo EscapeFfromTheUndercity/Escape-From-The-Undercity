@@ -57,11 +57,18 @@
       max-width: 800px;
       line-height: 1.8;
       text-align: left;
-      font-size: 1rem;
+      font-size: 1rem; /* default for mobile */
     }
     .content p {
       color: yellow;
     }
+    /* Only apply on desktop (768px and up) */
+     @media (min-width: 768px) {
+    .content {
+      font-size: 1.3rem; /* adjust size as needed */
+      line-height: 2;
+    }
+}
   </style>
 </head>
 <body>
