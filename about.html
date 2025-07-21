@@ -98,7 +98,7 @@ let context, source, buffer;
 async function playLoop() {
   if (!context) {
     context = new (window.AudioContext || window.webkitAudioContext)();
-    const response = await fetch("Escape Loop.wav");
+    const response = await fetch("escape-loop-fixed.wav");
     const arrayBuffer = await response.arrayBuffer();
     buffer = await context.decodeAudioData(arrayBuffer);
   }
@@ -111,7 +111,7 @@ async function playLoop() {
   source.buffer = buffer;
   source.loop = true;
   source.connect(context.destination);
-  source.start(0);
+  source.start(context.currentTime);
 }
 </script>
 
