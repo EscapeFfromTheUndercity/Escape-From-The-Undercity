@@ -91,13 +91,32 @@
       <p>Award Winning Comix Artist Richard Cowdry, with Peter Lally, bring you the future....NOW!!!</p>
     </div>
   </main>
-  <audio id="escapeAudio" loop>
-  <source src="Escape Loop.wav" type="audio/wav">
-  Your browser does not support the audio element.
-</audio>
+
+<script>
+let context, source, buffer;
+
+async function playLoop() {
+  if (!context) {
+    context = new (window.AudioContext || window.webkitAudioContext)();
+    const response = await fetch("Escape Loop.wav");
+    const arrayBuffer = await response.arrayBuffer();
+    buffer = await context.decodeAudioData(arrayBuffer);
+  }
+
+  if (source) {
+    source.stop();
+  }
+
+  source = context.createBufferSource();
+  source.buffer = buffer;
+  source.loop = true;
+  source.connect(context.destination);
+  source.start(0);
+}
+</script>
 
 <div style="text-align: center; margin: 30px;">
-  <button onclick="document.getElementById('escapeAudio').play()" style="
+  <button onclick="playLoop()" style="
     font-family: monospace;
     font-size: 1rem;
     background-color: #222;
@@ -108,5 +127,6 @@
     border-radius: 5px;
   ">▶ Play Escape Music</button>
 </div>
+
 </body>
 </html>
