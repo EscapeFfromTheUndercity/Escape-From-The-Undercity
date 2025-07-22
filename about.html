@@ -98,7 +98,7 @@ let context, source, buffer;
 async function playLoop() {
   if (!context) {
     context = new (window.AudioContext || window.webkitAudioContext)();
-    const response = await fetch("Escape_Loop_22_Jul_25.ogg");
+    const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
     const arrayBuffer = await response.arrayBuffer();
     buffer = await context.decodeAudioData(arrayBuffer);
   }
@@ -109,7 +109,7 @@ async function playLoop() {
 
   source = context.createBufferSource();
   source.buffer = buffer;
-  source.loop = true;
+  
   source.connect(context.destination);
   source.start(context.currentTime);
 }
