@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Escape from the Undercity</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      font-size: 1rem;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    @media (min-width: 600px) {
+      nav a {
+        font-size: 1.6rem;
+        padding: 8px 14px;
+      }
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 60px;
+      min-height: calc(100vh - 120px);
+    }
+    .content {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 800px;
+      line-height: 1.8;
+      text-align: left;
+      font-size: 1rem; /* default for mobile */
+    }
+    .content p {
+      color: yellow;
+    }
+    /* Only apply on desktop (768px and up) */
+     @media (min-width: 768px) {
+    .content {
+      font-size: 1.3rem; /* adjust size as needed */
+      line-height: 2;
+    }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="comic.html">Comic</a> |
+      <a href="about.html">About</a> |
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+      <p>It's all coming back to H now.....</p>
+      <p>His girlfriend Jane kept nagging, that if they were to take the next step in their relationship, H needed to do address his negativity.</p>
+      <p>H harboured deep misgivings about the City they lived in, especially its Government.  BUt Jane was immovable.  So H made an appointment to see a dcctor from the City Mental Health Team.</p>
+      <p>Now he awakes in a room, in a pile of dead bodies, with killer robots entering to clean up what remains.</p> 
+      <p>Now you're getting it H - you weren't paranoid enough!  And whatfore the Hippocratic Oath and Patient Consent?</p>
+      <p>Award Winning Comix Artist Richard Cowdry, with Peter Lally, bring you the future....NOW!!!</p>
+    </div>
+  </main>
+
+<script>
+let context, source, buffer;
+
+async function playLoop() {
+  if (!context) {
+    context = new (window.AudioContext || window.webkitAudioContext)();
+    const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
+    const arrayBuffer = await response.arrayBuffer();
+    buffer = await context.decodeAudioData(arrayBuffer);
+  }
+
+  if (source) {
+    source.stop();
+  }
+
+  source = context.createBufferSource();
+  source.buffer = buffer;
+  source.loop = true;
+  source.connect(context.destination);
+  source.start(context.currentTime);
+}
+</script>
+
+<div style="text-align: center; margin: 30px;">
+  <button onclick="playLoop()" style="
+    font-family: monospace;
+    font-size: 1rem;
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  ">▶ Play Escape Music</button>
+</div>
+
+</body>
+</html>
