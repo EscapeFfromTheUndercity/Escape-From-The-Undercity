@@ -71,11 +71,20 @@
   }
 
   @keyframes glowFlash {
-  0%, 66.66% {
+  0% {
     text-shadow: none;
   }
-  66.67%, 100% {
+  25% {
+    text-shadow: 0 0 5px yellow;
+  }
+  50% {
     text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+  }
+  75% {
+    text-shadow: 0 0 5px yellow;
+  }
+  100% {
+    text-shadow: none;
   }
 }
 
