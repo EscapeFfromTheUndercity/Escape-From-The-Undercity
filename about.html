@@ -106,48 +106,32 @@
   </main>
 
 <script>
-let context, source, buffer, isPlaying = false;
+let context = null;
+let source = null;
+let buffer = null;
+let isPlaying = false;
 
-async function setupAudio() {
+async function toggleMusic() {
   if (!context) {
     context = new (window.AudioContext || window.webkitAudioContext)();
     const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
     const arrayBuffer = await response.arrayBuffer();
     buffer = await context.decodeAudioData(arrayBuffer);
   }
-}
 
-async function playLoop() {
-  await setupAudio();
-  if (source) source.stop();
-
-  source = context.createBufferSource();
-  source.buffer = buffer;
-  source.loop = true;
-  source.connect(context.destination);
-  source.start(0);
-  isPlaying = true;
-}
-
-function stopLoop() {
-  if (source) {
+  if (isPlaying && source) {
     source.stop();
     source = null;
     isPlaying = false;
-  }
-}
-
-async function toggleMusic() {
-  if (isPlaying) {
-    stopLoop();
     document.getElementById('musicButton').textContent = '▶ Play Escape Music';
   } else {
-    try {
-      await playLoop();
-      document.getElementById('musicButton').textContent = '⏸ Stop Music';
-    } catch (e) {
-      console.log("User interaction required:", e);
-    }
+    source = context.createBufferSource();
+    source.buffer = buffer;
+    source.loop = true;
+    source.connect(context.destination);
+    source.start(0);
+    isPlaying = true;
+    document.getElementById('musicButton').textContent = '⏸ Stop Music';
   }
 }
 </script>
