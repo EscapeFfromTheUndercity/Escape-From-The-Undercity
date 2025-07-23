@@ -5,106 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Escape from the Undercity</title>
   <style>
-  body {
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    color: white;
-    font-size: 1rem;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-@keyframes glowFlash {
-  0% {
-    text-shadow: none;
-  }
-  50% {
-    text-shadow: 0 0 10px yellow, 0 0 20px yellow;
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-  @media (min-width: 600px) {
-    nav a {
-      font-size: 1.6rem;
-      padding: 8px 14px;
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
     }
+    header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      font-size: 1rem;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    @media (min-width: 600px) {
+      nav a {
+        font-size: 1.6rem;
+        padding: 8px 14px;
+      }
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 60px;
+      min-height: calc(100vh - 120px);
+    }
+    .content {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 800px;
+      line-height: 1.8;
+      text-align: left;
+      font-size: 1rem; /* default for mobile */
+    }
+    .content p {
+    color: yellow;
+    animation: glowFlash 6s infinite ease-in-out;
   }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 60px;
-    min-height: calc(100vh - 120px);
-  }
-
-  .content {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 800px;
-    line-height: 1.8;
-    text-align: left;
-    font-size: 1rem;
-  }
-
-  .content p {
-  color: yellow;
-  animation: glowFlash 6s infinite ease-in-out;
-}
 
   @keyframes glowFlash {
-  0% {
-    text-shadow: none;
-  }
-  25% {
-    text-shadow: 0 0 5px yellow;
-  }
-  50% {
-    text-shadow: 0 0 10px yellow, 0 0 20px yellow;
-  }
-  75% {
-    text-shadow: 0 0 5px yellow;
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-
-  @media (min-width: 768px) {
-    .content {
-      font-size: 1.3rem;
-      line-height: 2;
+    0% {
+      text-shadow: none;
+    }
+    50% {
+      text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+    }
+    100% {
+      text-shadow: none;
     }
   }
-</style>
+    /* Only apply on desktop (768px and up) */
+     @media (min-width: 768px) {
+    .content {
+      font-size: 1.3rem; /* adjust size as needed */
+      line-height: 2;
+    }
+}
+  </style>
 </head>
 <body>
   <header>
@@ -128,30 +106,60 @@
   </main>
 
 <script>
-let context, source, buffer;
+let context, source, buffer, isPlaying = false;
 
-async function playLoop() {
+async function setupAudio() {
   if (!context) {
     context = new (window.AudioContext || window.webkitAudioContext)();
     const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
     const arrayBuffer = await response.arrayBuffer();
     buffer = await context.decodeAudioData(arrayBuffer);
   }
+}
 
-  if (source) {
-    source.stop();
-  }
+async function playLoop() {
+  await setupAudio();
+  if (source) source.stop();
 
   source = context.createBufferSource();
   source.buffer = buffer;
-  
+  source.loop = true;
   source.connect(context.destination);
-  source.start(context.currentTime);
+  source.start(0);
+  isPlaying = true;
 }
+
+function stopLoop() {
+  if (source) {
+    source.stop();
+    source = null;
+    isPlaying = false;
+  }
+}
+
+async function toggleMusic() {
+  if (isPlaying) {
+    stopLoop();
+    document.getElementById('musicButton').textContent = '▶ Play Escape Music';
+  } else {
+    await playLoop();
+    document.getElementById('musicButton').textContent = '⏸ Stop Music';
+  }
+}
+
+// Try to autoplay on load
+window.addEventListener('load', async () => {
+  try {
+    await playLoop();
+    document.getElementById('musicButton').textContent = '⏸ Stop Music';
+  } catch (e) {
+    console.log("Autoplay blocked by browser, waiting for user interaction.");
+  }
+});
 </script>
 
 <div style="text-align: center; margin: 30px;">
-  <button onclick="playLoop()" style="
+  <button id="musicButton" onclick="toggleMusic()" style="
     font-family: monospace;
     font-size: 1rem;
     background-color: #222;
