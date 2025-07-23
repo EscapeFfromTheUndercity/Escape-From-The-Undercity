@@ -39,7 +39,17 @@
   nav a:hover {
     text-decoration: underline;
   }
-
+@keyframes glowFlash {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
   @media (min-width: 600px) {
     nav a {
       font-size: 1.6rem;
@@ -66,9 +76,9 @@
   }
 
   .content p {
-    color: yellow;
-    animation: glowFlash 6s infinite;
-  }
+  color: yellow;
+  animation: glowFlash 6s infinite ease-in-out;
+}
 
   @keyframes glowFlash {
   0% {
