@@ -106,12 +106,9 @@
   </main>
 
 <script>
-let context = null;
-let source = null;
-let buffer = null;
-let isPlaying = false;
+let context, source, buffer;
 
-async function toggleMusic() {
+async function playLoop() {
   if (!context) {
     context = new (window.AudioContext || window.webkitAudioContext)();
     const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
@@ -119,25 +116,20 @@ async function toggleMusic() {
     buffer = await context.decodeAudioData(arrayBuffer);
   }
 
-  if (isPlaying && source) {
+  if (source) {
     source.stop();
-    source = null;
-    isPlaying = false;
-    document.getElementById('musicButton').textContent = '▶ Play Escape Music';
-  } else {
-    source = context.createBufferSource();
-    source.buffer = buffer;
-    source.loop = true;
-    source.connect(context.destination);
-    source.start(0);
-    isPlaying = true;
-    document.getElementById('musicButton').textContent = '⏸ Stop Music';
   }
+
+  source = context.createBufferSource();
+  source.buffer = buffer;
+  
+  source.connect(context.destination);
+  source.start(context.currentTime);
 }
 </script>
 
 <div style="text-align: center; margin: 30px;">
-  <button id="musicButton" onclick="toggleMusic()" style="
+  <button onclick="playLoop()" style="
     font-family: monospace;
     font-size: 1rem;
     background-color: #222;
