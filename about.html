@@ -105,32 +105,17 @@
     </div>
   </main>
 
+<audio id="escapeAudio" loop preload="auto">
+  <source src="Escape_Loop_42_Bars_22_Jul_25.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
 <script>
-let context = null;
-let source = null;
-let buffer = null;
-
-async function playLoop() {
-  // Create AudioContext directly on user gesture
-  if (!context) {
-    context = new (window.AudioContext || window.webkitAudioContext)();
-  }
-
-  if (!buffer) {
-    const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
-    const arrayBuffer = await response.arrayBuffer();
-    buffer = await context.decodeAudioData(arrayBuffer);
-  }
-
-  if (source) {
-    source.stop();
-  }
-
-  source = context.createBufferSource();
-  source.buffer = buffer;
-  source.loop = true;
-  source.connect(context.destination);
-  source.start(0);
+function playLoop() {
+  const audio = document.getElementById('escapeAudio');
+  audio.play().catch(e => {
+    console.log("Audio play failed:", e);
+  });
 }
 </script>
 
