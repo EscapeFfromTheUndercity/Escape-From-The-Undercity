@@ -142,8 +142,12 @@ async function toggleMusic() {
     stopLoop();
     document.getElementById('musicButton').textContent = '▶ Play Escape Music';
   } else {
-    await playLoop();
-    document.getElementById('musicButton').textContent = '⏸ Stop Music';
+    try {
+      await playLoop();
+      document.getElementById('musicButton').textContent = '⏸ Stop Music';
+    } catch (e) {
+      console.log("Manual start failed:", e);
+    }
   }
 }
 
@@ -153,7 +157,8 @@ window.addEventListener('load', async () => {
     await playLoop();
     document.getElementById('musicButton').textContent = '⏸ Stop Music';
   } catch (e) {
-    console.log("Autoplay blocked by browser, waiting for user interaction.");
+    console.log("Autoplay blocked by browser, user must click to start.");
+    document.getElementById('musicButton').textContent = '▶ Play Escape Music';
   }
 });
 </script>
