@@ -106,11 +106,17 @@
   </main>
 
 <script>
-let context, source, buffer;
+let context = null;
+let source = null;
+let buffer = null;
 
 async function playLoop() {
+  // Create AudioContext directly on user gesture
   if (!context) {
     context = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (!buffer) {
     const response = await fetch("Escape_Loop_42_Bars_22_Jul_25.ogg");
     const arrayBuffer = await response.arrayBuffer();
     buffer = await context.decodeAudioData(arrayBuffer);
@@ -122,9 +128,9 @@ async function playLoop() {
 
   source = context.createBufferSource();
   source.buffer = buffer;
-  
+  source.loop = true;
   source.connect(context.destination);
-  source.start(context.currentTime);
+  source.start(0);
 }
 </script>
 
