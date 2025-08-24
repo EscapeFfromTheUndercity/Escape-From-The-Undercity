@@ -17,6 +17,19 @@
     .content p{color:yellow;animation:glowFlash 6s infinite ease-in-out}
     @keyframes glowFlash{0%{text-shadow:none}50%{text-shadow:0 0 10px yellow,0 0 20px yellow}100%{text-shadow:none}}
     @media(min-width:768px){.content{font-size:1.3rem;line-height:2}}
+
+    /* Typewriter caret */
+    .caret::after{
+      content:"▌";
+      display:inline-block;
+      animation:blink 1s steps(1,end) infinite;
+      margin-left:2px;
+    }
+    @keyframes blink{50%{opacity:0}}
+    @media (prefers-reduced-motion: reduce){
+      .content p{animation:none}
+      .caret::after{animation:none}
+    }
   </style>
 </head>
 <body style="background:#000;color:#fff">
@@ -31,14 +44,7 @@
   </header>
 
   <main>
-    <div class="content">
-      <p>It's all coming back to H now.....</p>
-      <p>His girlfriend Jane was insistent; if they were to take the next step in their relationship, he had to address his negativity.</p>
-      <p>H harboured deep misgivings about the City, especially its Government. But Jane was immoveable. So... he made an appointment with the City Mental Resilience Support Team.</p>
-      <p>He awakes in a room, amidst a pile of mostly dead bodies, killer robots entering, to clean up the remains.</p> 
-      <p>Now you're getting it H.  You weren't paranoid enough.  Who cancelled the Hippocratic Oath and Patient Consent?  And why did he listen to Jane?</p>
-      <p>Award Winning Comix Artist Richard Cowdry, with Peter Lally, bring you the future....NOW!!!</p>
-    </div>
+    <div class="content" id="about-typed" aria-live="polite"></div>
   </main>
 
   <!-- Music -->
@@ -54,44 +60,120 @@
   </button>
 
   <script>
+    // --- Music toggle (unchanged) ---
     const audio = document.getElementById('bgm');
     const btn   = document.getElementById('musicToggle');
-
-    // Use one shared key across pages so user choice stays consistent site-wide
-    const KEY = 'siteBgmPref'; // 'on' | 'off' | null
+    const KEY = 'siteBgmPref';
     const pref = localStorage.getItem(KEY);
-
     function setButton(isOn){
       btn.textContent = isOn ? '🔊 Music: On' : '🔇 Music: Off';
       btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
     }
-
     async function startMusic(){
       if (pref === 'off'){ setButton(false); return; }
-      try{
-        await audio.play();
-        setButton(true);
-        localStorage.setItem(KEY,'on');
-      }catch{
-        setButton(false); // autoplay blocked
-      }
+      try{ await audio.play(); setButton(true); localStorage.setItem(KEY,'on'); }
+      catch{ setButton(false); }
     }
-
     btn.addEventListener('click', async ()=>{
       if (audio.paused){
-        try{
-          await audio.play();
-          setButton(true);
-          localStorage.setItem(KEY,'on');
-        }catch{}
+        try{ await audio.play(); setButton(true); localStorage.setItem(KEY,'on'); }catch{}
       }else{
-        audio.pause();
-        setButton(false);
-        localStorage.setItem(KEY,'off');
+        audio.pause(); setButton(false); localStorage.setItem(KEY,'off');
       }
     });
-
     document.addEventListener('DOMContentLoaded', startMusic);
+
+    // --- Typewriter effect ---
+    (function () {
+      const container = document.getElementById('about-typed');
+
+      // Your existing six paragraphs, grouped 2+2+2
+      const batches = [
+        [
+          "It's all coming back to H now.....",
+          "His girlfriend Jane was insistent; if they were to take the next step in their relationship, he had to address his negativity."
+        ],
+        [
+          "H harboured deep misgivings about the City, especially its Government. But Jane was immoveable. So... he made an appointment with the City Mental Resilience Support Team.",
+          "He awakes in a room, amidst a pile of mostly dead bodies, killer robots entering, to clean up the remains."
+        ],
+        [
+          "Now you're getting it H.  You weren't paranoid enough.  Who cancelled the Hippocratic Oath and Patient Consent?  And why did he listen to Jane?",
+          "Award Winning Comix Artist Richard Cowdry, with Peter Lally, bring you the future....NOW!!!"
+        ]
+      ];
+
+      const typingSpeed = 18;           // ms per character
+      const pauseBetweenBatches = 30000; // 30s
+      const startDelay = 500;
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function typeParagraph(text, parent, onDone){
+        const p = document.createElement('p');
+        parent.appendChild(p);
+
+        if (reducedMotion){
+          p.textContent = text;
+          onDone && onDone();
+          return;
+        }
+
+        let i = 0;
+        (function tick(){
+          p.textContent += text.charAt(i++);
+          if (i < text.length){
+            setTimeout(tick, typingSpeed);
+          } else {
+            onDone && onDone();
+          }
+        })();
+      }
+
+      function typeBatch(batchIndex, onDone){
+        const wrap = document.createElement('div');
+        wrap.classList.add('caret'); // caret shown during typing & pause
+        container.appendChild(wrap);
+
+        const [p1, p2] = batches[batchIndex];
+        typeParagraph(p1, wrap, ()=> {
+          typeParagraph(p2, wrap, ()=> {
+            onDone && onDone(wrap);
+          });
+        });
+      }
+
+      function run(){
+        // If reduced motion, just dump all content immediately, no caret.
+        if (reducedMotion){
+          batches.flat().forEach(t=>{
+            const p = document.createElement('p');
+            p.textContent = t;
+            container.appendChild(p);
+          });
+          return;
+        }
+
+        setTimeout(()=>{
+          // Batch 1
+          typeBatch(0, (w1)=>{
+            setTimeout(()=>{
+              // Batch 2
+              typeBatch(1, (w2)=>{
+                setTimeout(()=>{
+                  // Batch 3 (no caret after finishing)
+                  typeBatch(2, (w3)=>{
+                    w3.classList.remove('caret'); // stop the blinking cursor at the very end
+                  });
+                }, pauseBetweenBatches);
+              });
+            }, pauseBetweenBatches);
+          });
+        }, startDelay);
+      }
+
+      run();
+    })();
   </script>
 </body>
 </html>
