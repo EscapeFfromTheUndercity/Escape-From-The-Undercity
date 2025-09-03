@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escape from the Undercity</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      margin: 0;
+      text-align: center;
+    }
+    header {
+      padding-top: 40px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      font-size: 1rem;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h2 {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: yellow;
+    }
+    /* Wrapper to control iframe size */
+    .subscribe-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .subscribe-wrapper iframe {
+      border: none;
+      width: 70%;
+      max-width: 500px;
+      height: 220px;
+    }
+    @media(max-width: 600px) {
+      .subscribe-wrapper iframe {
+        width: 90%;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Escape from the Undercity</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="comic.html">Comic</a> |
+      <a href="about.html">About</a> |
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <h2>Join the Resistance</h2>
+
+  <div class="subscribe-wrapper">
+    <iframe src="https://escapefromtheundercity.substack.com/embed" 
+            scrolling="no"></iframe>
+  </div>
+
+  <img src="pipes%202.jpeg" alt="Pipes" style="margin-top:30px; max-width:90%; height:auto;">
+
+</body>
+</html>
