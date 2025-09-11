@@ -113,74 +113,7 @@
     </form>
   </div>
 
-  <div class="scene" style="position:relative;width:100%;max-width:600px;margin:20px auto 0">
-  <img src="escape.jpg" alt="Rising smoke over the Undercity" style="display:block;width:100%;height:auto;border-radius:6px" />
-
-  <!-- SVG smoke overlay (sits above image) -->
-  <svg class="smoke" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice"
-       aria-hidden="true"
-       style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
-    <style>
-      @keyframes floatUp{0%{transform:translate(0,0) scale(1);opacity:0}
-        12%{opacity:.55} 80%{opacity:.55}
-        100%{transform:translate(60px,-340px) scale(1.6);opacity:0}}
-      .puff{animation:floatUp 9s linear infinite;mix-blend-mode:screen;transform-origin:center}
-      .t1{animation-duration:8s}.t2{animation-duration:9s}.t3{animation-duration:10s}
-      .d0{animation-delay:0s}.d1{animation-delay:.7s}.d2{animation-delay:1.4s}
-      .d3{animation-delay:2.1s}.d4{animation-delay:2.8s}.d5{animation-delay:3.5s}
-      .s1 circle{r:16;filter:url(#w1)}.s2 circle{r:22;filter:url(#w2)}.s3 circle{r:30;filter:url(#w3)}
-    </style>
-    <defs>
-      <filter id="w1" x="-50%" y="-100%" width="200%" height="300%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.024" numOctaves="2" seed="7" stitchTiles="stitch"/>
-        <feDisplacementMap in="SourceGraphic" scale="22" xChannelSelector="R" yChannelSelector="G"/>
-        <feGaussianBlur stdDeviation="2.5"/>
-      </filter>
-      <filter id="w2" x="-50%" y="-100%" width="200%" height="300%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.010 0.020" numOctaves="2" seed="11" stitchTiles="stitch"/>
-        <feDisplacementMap in="SourceGraphic" scale="26" xChannelSelector="R" yChannelSelector="G"/>
-        <feGaussianBlur stdDeviation="3"/>
-      </filter>
-      <filter id="w3" x="-50%" y="-100%" width="200%" height="300%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.028" numOctaves="2" seed="15" stitchTiles="stitch"/>
-        <feDisplacementMap in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G"/>
-        <feGaussianBlur stdDeviation="3.2"/>
-      </filter>
-      <linearGradient id="fadeUp" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%" stop-color="white" stop-opacity="1"/>
-        <stop offset="75%" stop-color="white" stop-opacity=".55"/>
-        <stop offset="100%" stop-color="white" stop-opacity="0"/>
-      </linearGradient>
-      <symbol id="puff"><circle cx="0" cy="0" r="24" fill="url(#fadeUp)"/></symbol>
-    </defs>
-
-    <!-- Adjust the translate(x,y) so the puffs emerge from your chimneys -->
-    <!-- Chimney A -->
-    <g transform="translate(165,360)">
-      <g class="puff s2 d0 t2"><use href="#puff"/></g>
-      <g class="puff s3 d1 t3"><use href="#puff"/></g>
-      <g class="puff s1 d2 t1"><use href="#puff"/></g>
-      <g class="puff s2 d3 t2"><use href="#puff"/></g>
-      <g class="puff s3 d4 t3"><use href="#puff"/></g>
-    </g>
-
-    <!-- Chimney B -->
-    <g transform="translate(300,362)">
-      <g class="puff s1 d0 t1"><use href="#puff"/></g>
-      <g class="puff s2 d1 t2"><use href="#puff"/></g>
-      <g class="puff s3 d2 t3"><use href="#puff"/></g>
-      <g class="puff s2 d3 t2"><use href="#puff"/></g>
-    </g>
-
-    <!-- Chimney C -->
-    <g transform="translate(430,358)">
-      <g class="puff s2 d0 t3"><use href="#puff"/></g>
-      <g class="puff s3 d1 t2"><use href="#puff"/></g>
-      <g class="puff s1 d2 t1"><use href="#puff"/></g>
-      <g class="puff s3 d3 t3"><use href="#puff"/></g>
-    </g>
-  </svg>
-</div>
+  <img src="escape.jpg" alt="Rising smoke over the Undercity" class="hero" />
 
   <audio id="bgm" loop preload="auto">
     <source src="escape_main_theme_21aug25.ogg" type="audio/ogg">
