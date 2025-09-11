@@ -41,7 +41,6 @@
       }
     }
 
-    /* Subscribe box */
     .subscribe {
       margin: 40px 0 10px;
       text-align: center;
@@ -80,16 +79,14 @@
       background:#2c8fe6;
     }
 
-    /* Image */
     .hero {
       display:block;
       margin: 20px auto 0;
       width: 100%;
       height: auto;
-      max-width: 600px; /* limits desktop size */
+      max-width: 600px;
     }
 
-    /* MOBILE-ONLY: narrower subscribe UI */
     @media (max-width: 480px) {
       .subscribe form { gap: 6px !important; }
       .subscribe input[type="email"] { width: 160px !important; }
@@ -116,15 +113,13 @@
     </form>
   </div>
 
-  <img src="Smoke.gif" alt="Rising smoke over the Undercity" class="hero" />
+  <img src="escape.jpg" alt="Rising smoke over the Undercity" class="hero" />
 
-  <!-- Music -->
   <audio id="bgm" loop preload="auto">
-    <source src="opening_theme__8_Sep_25l.ogg" type="audio/ogg">
+    <source src="escape_main_theme_21aug25.ogg" type="audio/ogg">
     Your browser does not support the audio element.
   </audio>
 
-  <!-- Toggle button -->
   <button id="musicToggle" aria-pressed="true"
     style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
            font-family:monospace;font-size:1rem;background:#222;color:#fff;
