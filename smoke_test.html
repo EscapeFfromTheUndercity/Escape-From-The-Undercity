@@ -8,7 +8,16 @@
   body{margin:0;background:#000;color:#fff;font-family:system-ui}
   .scene{position:relative;width:min(980px,96vw);margin:20px auto}
   .scene img{display:block;width:100%;height:auto;border-radius:8px}
-  .smoke{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .smoke{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  background-image:
+    linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px);
+  background-size:50px 50px;
+}
   .puff{position:absolute;left:0;bottom:0;width:48px;height:48px;border-radius:50%;
         background:radial-gradient(circle, rgba(255,255,255,.95), rgba(255,255,255,.7) 55%, rgba(255,255,255,0) 80%);
         filter:blur(8px);opacity:0;animation:rise 7s linear infinite}
