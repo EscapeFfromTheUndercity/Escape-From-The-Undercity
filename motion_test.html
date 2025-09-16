@@ -1,1 +1,32 @@
-
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motion Test (simple haze)</title>
+<style>
+  body{margin:0;background:#000}
+  .scene{position:relative;width:min(980px,96vw);margin:20px auto}
+  .scene img{display:block;width:100%;height:auto}
+  .haze{
+    position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 35% 78%, rgba(130,130,130,.18), transparent 60%),
+      radial-gradient(ellipse at 70% 72%, rgba(110,110,110,.12), transparent 65%);
+    filter: blur(8px);
+    animation: drift 18s linear infinite;
+  }
+  @keyframes drift{
+    0%{transform:translate(0,0); opacity:.55}
+    50%{transform:translate(40px,-24px); opacity:.7}
+    100%{transform:translate(80px,-48px); opacity:.55}
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <img src="escape.jpg" alt="">
+    <div class="haze"></div>
+  </div>
+</body>
+</html>
