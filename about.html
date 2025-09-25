@@ -18,7 +18,7 @@
     nav a:hover{text-decoration:underline}
     @media(min-width:600px){nav a{font-size:1.6rem;padding:8px 14px}}
 
-    /* New social icons container matching text width */
+    /* Social icons under menu, matching text width */
     .about-social {
       display: flex;
       justify-content: space-between;
@@ -27,22 +27,20 @@
       max-width: 800px;   /* match .content max-width */
       margin: 30px auto 10px;
     }
-
     .about-social a {
       color: yellow;
-      font-size: 4rem;             /* double size */
-      width: 4.5rem;
-      height: 4.5rem;
+      font-size: 3rem;        /* reduced from 4rem */
+      width: 3.5rem;          /* reduced from 4.5rem */
+      height: 3.5rem;         /* reduced from 4.5rem */
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 2px solid yellow;    /* square outline */
-      border-radius: 8px;          /* slight rounded corners */
+      border: 2px solid yellow;
+      border-radius: 8px;
       text-decoration: none;
       text-shadow: 0 0 12px yellow, 0 0 24px yellow;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .about-social a:hover {
       transform: scale(1.15);
       box-shadow: 0 0 18px yellow;
@@ -79,7 +77,7 @@
       <a href="shop.html">Shop</a>
     </nav>
 
-    <!-- Social icons under menu, aligned with text edges -->
+    <!-- Social icons under menu -->
     <div class="about-social">
       <a href="https://x.com/EscapeUndercity" target="_blank" aria-label="Twitter">
         <i class="fa-brands fa-twitter"></i>
