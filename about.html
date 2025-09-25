@@ -12,6 +12,26 @@
     nav a{color:#fff;font-size:1rem;margin:0 10px;text-decoration:none}
     nav a:hover{text-decoration:underline}
     @media(min-width:600px){nav a{font-size:1.6rem;padding:8px 14px}}
+
+    /* New social icons under menu */
+    .about-social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 200px;          /* space between the icons */
+      margin-top: 20px;
+    }
+    .about-social a {
+      color: yellow;
+      font-size: 2rem;
+      text-decoration: none;
+      text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+      transition: transform 0.3s ease;
+    }
+    .about-social a:hover {
+      transform: scale(1.2);
+    }
+
     main{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:60px;min-height:calc(100vh - 120px)}
     .content{margin:0 auto;width:90%;max-width:800px;line-height:1.8;text-align:left;font-size:1rem}
     .content p{color:yellow;animation:glowFlash 6s infinite ease-in-out}
@@ -42,6 +62,12 @@
       <a href="about.html">About</a> |
       <a href="shop.html">Shop</a>
     </nav>
+
+    <!-- Social icons under menu -->
+    <div class="about-social">
+      <a href="https://x.com/EscapeUndercity" target="_blank" aria-label="Twitter">🐦</a>
+      <a href="https://www.instagram.com/escapefromtheundercity/" target="_blank" aria-label="Instagram">📸</a>
+    </div>
   </header>
 
   <main>
@@ -103,7 +129,7 @@
       ];
 
       const typingSpeed = 18;
-      const pauseBetweenBatches = 5000; // halved to 5s
+      const pauseBetweenBatches = 5000;
       const startDelay = 500;
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -143,15 +169,14 @@
         }
 
         setTimeout(()=>{
-          // Batch 1
           typeBatch(0, (w1)=>{
             setTimeout(()=>{
-              w1.classList.remove('caret'); // remove old caret
+              w1.classList.remove('caret');
               typeBatch(1, (w2)=>{
                 setTimeout(()=>{
-                  w2.classList.remove('caret'); // remove caret
+                  w2.classList.remove('caret');
                   typeBatch(2, (w3)=>{
-                    w3.classList.remove('caret'); // ensure no caret at the end
+                    w3.classList.remove('caret');
                   });
                 }, pauseBetweenBatches);
               });
