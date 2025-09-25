@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Escape from the Undercity</title>
+
+  <!-- Font Awesome for outline social icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   <style>
     body{background:#000;color:#fff;font-family:monospace;margin:0}
     header{text-align:center;display:flex;flex-direction:column;align-items:center;padding-top:40px}
@@ -13,23 +18,34 @@
     nav a:hover{text-decoration:underline}
     @media(min-width:600px){nav a{font-size:1.6rem;padding:8px 14px}}
 
-    /* New social icons under menu */
+    /* New social icons container matching text width */
     .about-social {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 200px;          /* space between the icons */
-      margin-top: 20px;
+      width: 90%;
+      max-width: 800px;   /* match .content max-width */
+      margin: 30px auto 10px;
     }
+
     .about-social a {
       color: yellow;
-      font-size: 2rem;
+      font-size: 4rem;             /* double size */
+      width: 4.5rem;
+      height: 4.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid yellow;    /* square outline */
+      border-radius: 8px;          /* slight rounded corners */
       text-decoration: none;
-      text-shadow: 0 0 10px yellow, 0 0 20px yellow;
-      transition: transform 0.3s ease;
+      text-shadow: 0 0 12px yellow, 0 0 24px yellow;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .about-social a:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
+      box-shadow: 0 0 18px yellow;
     }
 
     main{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:60px;min-height:calc(100vh - 120px)}
@@ -63,10 +79,14 @@
       <a href="shop.html">Shop</a>
     </nav>
 
-    <!-- Social icons under menu -->
+    <!-- Social icons under menu, aligned with text edges -->
     <div class="about-social">
-      <a href="https://x.com/EscapeUndercity" target="_blank" aria-label="Twitter">🐦</a>
-      <a href="https://www.instagram.com/escapefromtheundercity/" target="_blank" aria-label="Instagram">📸</a>
+      <a href="https://x.com/EscapeUndercity" target="_blank" aria-label="Twitter">
+        <i class="fa-brands fa-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/escapefromtheundercity/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
     </div>
   </header>
 
@@ -87,7 +107,7 @@
   </button>
 
   <script>
-    // --- Music toggle (unchanged) ---
+    // --- Music toggle ---
     const audio = document.getElementById('bgm');
     const btn   = document.getElementById('musicToggle');
     const KEY = 'siteBgmPref';
