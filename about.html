@@ -29,9 +29,9 @@
     }
     .about-social a {
       color: yellow;
-      font-size: 3rem;        /* reduced from 4rem */
-      width: 3.5rem;          /* reduced from 4.5rem */
-      height: 3.5rem;         /* reduced from 4.5rem */
+      font-size: 3rem;
+      width: 3.5rem;
+      height: 3.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -47,10 +47,22 @@
     }
 
     main{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:60px;min-height:calc(100vh - 120px)}
-    .content{margin:0 auto;width:90%;max-width:800px;line-height:1.8;text-align:left;font-size:1rem}
+    .content{
+      margin:0 auto;
+      width:90%;
+      max-width:800px;
+      line-height:1.8;
+      text-align:left;
+      font-size:1rem;
+    }
     .content p{color:yellow;animation:glowFlash 6s infinite ease-in-out}
     @keyframes glowFlash{0%{text-shadow:none}50%{text-shadow:0 0 10px yellow,0 0 20px yellow}100%{text-shadow:none}}
     @media(min-width:768px){.content{font-size:1.3rem;line-height:2}}
+
+    /* Mobile bottom padding to clear music button */
+    @media (max-width:600px){
+      .content{padding-bottom:90px;}
+    }
 
     /* Typewriter caret */
     .caret::after{
