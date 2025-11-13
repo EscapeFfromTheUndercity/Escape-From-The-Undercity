@@ -107,7 +107,10 @@
 
   <div class="subscribe">
     <h3>Join the Resistance</h3>
-    <form action="https://escapefromtheundercity.substack.com/subscribe" method="get" target="_blank" rel="noopener">
+
+    <!-- FIXED SUBSTACK FORM -->
+    <form action="https://peterlally.substack.com/api/v1/free"
+          method="post" target="_blank" rel="noopener">
       <input type="email" name="email" placeholder="Your email..." required />
       <button type="submit">Subscribe</button>
     </form>
