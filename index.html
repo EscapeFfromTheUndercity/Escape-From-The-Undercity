@@ -3,98 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Escape from the Undercity</title>
+  <title>About - Escape from the Undercity</title>
+
+  <!-- Font Awesome for outline social icons (includes X/Twitter) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: monospace;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
+    body{background:#000;color:#fff;font-family:monospace;margin:0}
+    header{text-align:center;display:flex;flex-direction:column;align-items:center;padding-top:40px}
+    h1{font-size:2.5rem}
+    nav{margin-top:10px}
+    nav a{color:#fff;font-size:1rem;margin:0 10px;text-decoration:none}
+    nav a:hover{text-decoration:underline}
+    @media(min-width:600px){nav a{font-size:1.6rem;padding:8px 14px}}
+
+    /* Social icons placed midway between menu and text */
+    .about-social {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      padding-top: 40px;
+      width: 90%;
+      max-width: 800px;
+      margin: 60px auto 20px;
     }
-    h1 {
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      font-size: 1rem;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    @media (min-width: 600px) {
-      nav a {
-        font-size: 1.6rem;
-        padding: 8px 14px;
-      }
-    }
-
-    .subscribe {
-      margin: 40px 0 10px;
-      text-align: center;
-    }
-    .subscribe h3 {
+    .about-social a {
       color: yellow;
-      font-size: 1.6rem;
-      margin: 0 0 10px;
-    }
-    .subscribe form {
-      display: inline-flex;
+      font-size: 3rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 8px;
+      border: 2px solid yellow;
+      border-radius: 8px;
+      text-decoration: none;
+      text-shadow: 0 0 12px yellow, 0 0 24px yellow;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .subscribe input[type="email"] {
-      padding: 10px;
-      font-size: 1rem;
-      font-family: monospace;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      width: 240px;
-      background:#fff;
-      color:#000;
-    }
-    .subscribe button {
-      padding: 10px 16px;
-      font-size: 1rem;
-      font-family: monospace;
-      border: none;
-      border-radius: 4px;
-      background:#3da1ff;
-      color:#000;
-      cursor: pointer;
-    }
-    .subscribe button:hover {
-      background:#2c8fe6;
+    .about-social a:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 18px yellow;
     }
 
-    .hero {
-      display:block;
-      margin: 20px auto 0;
-      width: 100%;
-      height: auto;
-      max-width: 600px;
+    main{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:60px;min-height:calc(100vh - 120px)}
+    .content{
+      margin:0 auto;
+      width:90%;
+      max-width:800px;
+      line-height:1.8;
+      text-align:left;
+      font-size:1rem;
+    }
+    .content p{color:yellow;animation:glowFlash 6s infinite ease-in-out}
+    @keyframes glowFlash{0%{text-shadow:none}50%{text-shadow:0 0 10px yellow,0 0 20px yellow}100%{text-shadow:none}}
+    @media(min-width:768px){.content{font-size:1.3rem;line-height:2}}
+
+    /* Mobile bottom padding to clear music button */
+    @media (max-width:600px){
+      .content{padding-bottom:90px;}
     }
 
-    @media (max-width: 480px) {
-      .subscribe form { gap: 6px !important; }
-      .subscribe input[type="email"] { width: 160px !important; }
-      .subscribe button { padding: 8px 12px !important; font-size: 0.9rem !important; }
+    /* Typewriter caret */
+    .caret::after{
+      content:"_";
+      color: yellow;
+      display:inline-block;
+      animation:blink 1s steps(1,end) infinite;
+      margin-left:2px;
+    }
+    @keyframes blink{50%{opacity:0}}
+    @media (prefers-reduced-motion: reduce){
+      .content p{animation:none}
+      .caret::after{animation:none}
     }
   </style>
+
+  <!-- Counter.dev tracking -->
+  <script src="https://cdn.counter.dev/script.js"
+          data-id="28e7dbe3-2f5d-44da-8cd9-0a0efdc81786"
+          data-utcoffset="0" async></script>
+
 </head>
-<body>
+<body style="background:#000;color:#fff">
   <header>
     <h1>Escape from the Undercity</h1>
     <nav>
@@ -103,54 +94,55 @@
       <a href="about.html">About</a> |
       <a href="shop.html">Shop</a>
     </nav>
+
+    <!-- Social icons under menu, centered in the gap -->
+    <div class="about-social">
+      <a href="https://x.com/EscapeUndercity" target="_blank" aria-label="X (Twitter)">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://www.tiktok.com/@escapefromtheundercity" target="_blank" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+      <a href="https://www.youtube.com/@richard_c1327" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/escapefromtheundercity/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
   </header>
 
-  <div class="subscribe">
-    <h3>Join the Resistance</h3>
+  <main>
+    <div class="content" id="about-typed" aria-live="polite"></div>
+  </main>
 
-    <!-- FIXED SUBSTACK FORM -->
-    <form action="https://peterlally.substack.com/api/v1/free"
-          method="post" target="_blank" rel="noopener">
-      <input type="email" name="email" placeholder="Your email..." required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-
-  <!-- Smoke animation video -->
-  <video autoplay loop muted playsinline class="hero">
-    <source src="chimney_video_animation_30sep25.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
+  <!-- Music -->
   <audio id="bgm" loop preload="auto">
-    <source src="opening_theme__13_Sep_25l.ogg" type="audio/ogg">
+    <source src="escape_loop_theme_9_Aug_25.ogg" type="audio/ogg">
     Your browser does not support the audio element.
   </audio>
 
+  <!-- Toggle button -->
   <button id="musicToggle" aria-pressed="true"
-    style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
-           font-family:monospace;font-size:1rem;background:#222;color:#fff;
-           border:1px solid #555;padding:10px 18px;cursor:pointer;border-radius:6px;z-index:10">
+    style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);font-family:monospace;font-size:1rem;background:#222;color:#fff;border:1px solid #555;padding:10px 18px;cursor:pointer;border-radius:6px;z-index:10">
     🔊 Music: On
   </button>
 
   <script>
+    // --- Music toggle ---
     const audio = document.getElementById('bgm');
     const btn   = document.getElementById('musicToggle');
     const KEY = 'siteBgmPref';
     const pref = localStorage.getItem(KEY);
-
     function setButton(isOn){
       btn.textContent = isOn ? '🔊 Music: On' : '🔇 Music: Off';
       btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
     }
-
     async function startMusic(){
       if (pref === 'off'){ setButton(false); return; }
       try{ await audio.play(); setButton(true); localStorage.setItem(KEY,'on'); }
       catch{ setButton(false); }
     }
-
     btn.addEventListener('click', async ()=>{
       if (audio.paused){
         try{ await audio.play(); setButton(true); localStorage.setItem(KEY,'on'); }catch{}
@@ -158,8 +150,85 @@
         audio.pause(); setButton(false); localStorage.setItem(KEY,'off');
       }
     });
-
     document.addEventListener('DOMContentLoaded', startMusic);
+
+    // --- Typewriter effect ---
+    (function () {
+      const container = document.getElementById('about-typed');
+      const batches = [
+        [
+          "It's all coming back to him.....",
+          "H's girlfriend Jane, kept insisting, if they were to be together, he had to address his negativity and paranoia."
+        ],
+        [
+          "H harboured deep misgivings about $h!-City, its society, and especially its government.  But he and Jane had this connection.  Jane is very attractive.  So ... H makes an appointment with the City Mental Resilience Support Team.",
+          "He awakes in a room, atop a pile of dead bodies, as killer robots enter to dispose of what remains."
+        ],
+        [
+          "Now you're getting it H!  You weren't paranoid enough!!  It's dangerous to listen to people with flour in their heads.  And whatfore all that talk about The Hippocratic Oath, Patient Consent, and Human Rights' Law?  If H survives, and ever regains freedom, he can always take his dictionary and look up the word 'Fallacy'.",
+          "Award Winning Comix Artist Richard Cowdry, with Peter Lally, bring you the future....NOW!!!"
+        ]
+      ];
+
+      const typingSpeed = 18;
+      const pauseBetweenBatches = 5000;
+      const startDelay = 500;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function typeParagraph(text, parent, onDone){
+        const p = document.createElement('p');
+        parent.appendChild(p);
+        if (reducedMotion){ p.textContent = text; onDone && onDone(); return; }
+        let i = 0;
+        (function tick(){
+          p.textContent += text.charAt(i++);
+          if (i < text.length){ setTimeout(tick, typingSpeed); }
+          else { onDone && onDone(); }
+        })();
+      }
+
+      function typeBatch(batchIndex, onDone){
+        const wrap = document.createElement('div');
+        wrap.classList.add('caret');
+        container.appendChild(wrap);
+
+        const [p1, p2] = batches[batchIndex];
+        typeParagraph(p1, wrap, ()=> {
+          typeParagraph(p2, wrap, ()=> {
+            onDone && onDone(wrap);
+          });
+        });
+      }
+
+      function run(){
+        if (reducedMotion){
+          batches.flat().forEach(t=>{
+            const p=document.createElement('p');
+            p.textContent=t;
+            container.appendChild(p);
+          });
+          return;
+        }
+
+        setTimeout(()=>{
+          typeBatch(0, (w1)=>{
+            setTimeout(()=>{
+              w1.classList.remove('caret');
+              typeBatch(1, (w2)=>{
+                setTimeout(()=>{
+                  w2.classList.remove('caret');
+                  typeBatch(2, (w3)=>{
+                    w3.classList.remove('caret');
+                  });
+                }, pauseBetweenBatches);
+              });
+            }, pauseBetweenBatches);
+          });
+        }, startDelay);
+      }
+
+      run();
+    })();
   </script>
 </body>
 </html>
